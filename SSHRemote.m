@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*SSHRemote package*)
+(*SSHRemote package v1.9*)
 
 
 (* ::Subtitle:: *)
@@ -51,6 +51,52 @@ If[$VersionNumber<10.1,
 ]
 
 
+(* ::Subsection::Closed:: *)
+(*Error handling, error messages*)
+
+
+General::npos=General::estep; (* "Value of option `1` -> `2` is not a positive integer." *)
+
+
+ValidateCondition::usage=
+"ValidateCondition[condition_, errorMsgStr_String, opts___, failAction_:Abort[]]
+ValidateCondition[condition_, Optional[errorMsgName_MessageName, General::asrtf], opts___, failAction_:Abort[]]
+
+Verifies that the specified condition is True, and if not, displays an error message and aborts the computation or perform a user-specific failure action.
+The error message is specified via either a message name or a control string.";
+
+ValidateOption::usage=
+"ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgStr_String, failAction_:Abort[]]
+ValidateOption[optValue_, optName_Symbol, optPossibleValues_, Optional[errorMsgName_MessageName, General::optvg], failAction_:Abort[]]
+
+Verifies that the provided value 'optValue' matches one of the possible values 'optPossibleValues' for the option 'optName', and if not, displays an error message and aborts the computation or perform a user-specific failure action.
+The error message is specified via either a message name or a control string.";
+
+Begin["`Private`"];
+
+SetAttributes[ValidateCondition, HoldAll]; (* 'HoldAll' attribute must be acquired first for the 'failAction' specification to be correctly set *)
+
+ValidateCondition[condition_, errorMsgStr_String, opts___, failAction_:Abort[]] :=
+  If[!condition, Print@StringForm[errorMsgStr, If[opts===Null, condition, Sequence@@{opts}]]; failAction];
+
+ValidateCondition[condition_, Optional[errorMsgName_MessageName, General::asrtf], opts___, failAction_:Abort[]] :=
+  If[!condition, Message[errorMsgName, If[opts===Null, condition, Sequence@@{opts}]]; failAction];
+
+SetAttributes[ValidateCondition, Protected];
+
+SetAttributes[ValidateOption, HoldAll]; (* 'HoldAll' attribute must be acquired first for the 'failAction' specification to be correctly set *)
+
+ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgStr_String, failAction_:Abort[]] :=
+  ValidateCondition[MatchQ[optValue, optPossibleValues], errorMsgStr, optName, optValue, optPossibleValues, failAction];
+
+ValidateOption[optValue_, optName_Symbol, optPossibleValues_, Optional[errorMsgName_MessageName, General::optvg], failAction_:Abort[]] :=
+  ValidateCondition[MatchQ[optValue, optPossibleValues], errorMsgName, InputForm@optName, InputForm@optValue, InputForm@optPossibleValues, failAction];
+
+SetAttributes[ValidateOption, Protected];
+
+End[]; (* "`Private`" *)
+
+
 (* ::Subsection:: *)
 (*Implementation*)
 
@@ -59,7 +105,10 @@ Off[General::shdw]; (* Switch off shadowing warnings for Verbose, Asynchronous a
 
 
 SSHRemote`SshLaunchRemote::usage=
-"SshLaunchRemote[host_String, username_String, cmdTemplate_String, n_Integer, OptionsPattern[]]
+"SshLaunchRemote[host_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- Uses $RemoteUserName and $RemoteCommand as default values.
+SshLaunchRemote[host_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- Uses $RemoteUserName as default value.
+SshLaunchRemote[host_String, username_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]]
+
 Starts n remote kernels via an SSH connection to the specified host and user. The specific remote kernel command is specified via the cmdTemplate parameter; see ?$RemoteCommand for the specific syntax.
 
 The valid options are:
@@ -93,7 +142,37 @@ The default value is given by the value of $OperatingSystem.";
 On[General::shdw]; (* Restore shadowing warnings *)
 
 
+SshRemoteMachine::usage = "SshRemoteMachine[..] is an extension of RemoteMachine[..].";
+sshRemoteKernelObject::usage = "sshRemoteKernelObject[method] is an extension of remoteKernelObject[method]."
+sshRemoteKernel::usage = "sshRemoteKernel[..] is an extension of remoteKernel[..]."
+
+
 Begin["`Private`"]
+
+
+(* description language methods *)
+SshRemoteMachine/: SubKernels`KernelCount[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, opts:OptionsPattern[]]] := n
+
+(* format of description items *)
+Format[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n==1] :=
+	StringForm["\[LeftSkeleton]a kernel on `1`\[RightSkeleton]", host]
+Format[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n>1] :=
+	StringForm["\[LeftSkeleton]`1` kernels on `2`\[RightSkeleton]", n, host]
+
+(* factory method *)
+SshRemoteMachine/: SubKernels`NewKernels[SshRemoteMachine[args___], opts:OptionsPattern[]] := SshLaunchRemote[args, opts]
+
+
+SetAttributes[sshRemoteKernel, HoldAll]; (* data type *)
+
+(* interface methods *)
+DownValues[sshRemoteKernel]=(DownValues[remoteKernel]/.remoteKernel->sshRemoteKernel);
+UpValues[sshRemoteKernel]=(UpValues[remoteKernel]/.remoteKernel->sshRemoteKernel);
+sshRemoteKernel/: SubKernels`Description[kernel_sshRemoteKernel] := SshRemoteMachine@@SubKernels`RemoteKernels`Private`arglist[kernel];
+sshRemoteKernel/: SubKernels`SubKernelType[kernel_sshRemoteKernel] := sshRemoteKernelObject;
+
+
+sshRemoteKernelObject[subKernels] := SubKernels`RemoteKernels`Private`$openkernels;
 
 
 (* Standard paths to Java and MathSSH *)
@@ -117,13 +196,19 @@ Options[SshLaunchRemote]={SSHRemote`Multiplexing->False, SSHRemote`MultiplexingC
 
 SyntaxInformation[SshLaunchRemote]={"ArgumentsPattern"->{_,_,__,OptionsPattern[]}, "OptionNames"->(*optionNames[SshLaunchRemote]*){"Multiplexing","MultiplexingCommands","Verbose"}};
 
-SshLaunchRemote[host_String, username_String, cmdTemplate_String, n_Integer, OptionsPattern[]]:=
+SshLaunchRemote[host_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
+  SshLaunchRemote[host, $RemoteUserName, $RemoteCommand, n, opts];
+
+SshLaunchRemote[host_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
+  SshLaunchRemote[host, $RemoteUserName, cmdTemplate, n, opts];
+
+SshLaunchRemote[host_String, username_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
 Module[{multiplex,multiplexCmds,verbose,java,wolframssh,mathssh,links,cmdLine,code},
   {multiplex,multiplexCmds,verbose}=OptionValue@{SSHRemote`Multiplexing,SSHRemote`MultiplexingCommands,Verbose};
-  If[!BooleanQ[multiplex],Message[General::opttf,SshLaunchRemote,multiplex];Abort[]];
+  ValidateCondition[BooleanQ[multiplex], General::opttf, MultiplexingCommands, multiplex];
   If[!MatchQ[multiplexCmds,{_String,_String}],Message[General::irule,multiplexCmds];Abort[]];(*General::optrs*)
-  If[!BooleanQ[verbose],Message[General::opttf,SshLaunchRemote,verbose];Abort[]];
-  If[n<=0,Print["The number of kernels must be a positive integer!"];Abort[];];
+  ValidateCondition[BooleanQ[verbose], General::opttf, Verbose, verbose];
+  ValidateCondition[n>0, "The number of kernels must be a positive integer!"];
 
   If[multiplex,Print["SSH with Multiplexing"],Print["SSH with NO Multiplexing"]];
 
@@ -165,10 +250,30 @@ Module[{multiplex,multiplexCmds,verbose,java,wolframssh,mathssh,links,cmdLine,co
   ];
 
   (* Attempt to connect to the kernels. If it succeeds, we don't need to close the links; they will be automatically closed when the kernels are terminated using CloseKernels[]. *)
-  Module[{link=#,kernel},kernel=LaunchKernels[link];If[FailureQ[kernel],Print["Failed to start a remote kernel on ",host," !"];LinkClose[link];];kernel]&/@links
+  (** Module[{link=#,kernel},kernel=LaunchKernels[link];If[FailureQ[kernel],Print["Failed to start a remote kernel on ",host," !"];LinkClose[link];];kernel]&/@links **)
+  initLink[links, host, {host,username,cmdTemplate,opts}, OptionValue[LaunchRemote, FilterRules[{opts},Options[LaunchRemote]], KernelSpeed] ]
 ];
 
-SshLaunchRemote[host_String,username_String,cmdTemplate_String,opts:OptionsPattern[]]:=SshLaunchRemote[host,username,cmdTemplate,1,opts];
+
+(* handling short forms of kernel descriptions *)
+(* exclude the names matched by LocalKernels *)
+sshRemoteKernelObject[try][Except["localhost"|"local",s_String], args___]/; StringMatchQ[s,RegularExpression["\\w+(\\.\\w+)*"]] :=
+	SshLaunchRemote[s, args] (* hostname, but not the special one for local kernels *);
+
+
+(* raw constructor; several at once *)
+initLink[links_List, host_, args_, sp_] :=
+ Module[{kernels},
+ 	(* each kernel gets its own set of variables for the mutable fields *)
+ 	kernels = Module[{speed=sp}, sshRemoteKernel[ SubKernels`RemoteKernels`Private`lk[#, host, args, speed] ]]& /@ links;
+ 	(* local init *)
+ 	AppendTo[SubKernels`RemoteKernels`Private`$openkernels, kernels];
+ 	(* base class init *)
+ 	SubKernels`Protected`kernelInit[kernels]
+ ]
+
+(* single one *)
+initLink[link_, args__] := SubKernels`Protected`firstOrFailed[ initLink[{link}, args] ]
 
 
 Options[AdjustCommandLine]={SSHRemote`Asynchronous->False, SSHRemote`OperatingSystem->$OperatingSystem};
@@ -178,8 +283,8 @@ SyntaxInformation[AdjustCommandLine]={"ArgumentsPattern"->{_,OptionsPattern[]}, 
 AdjustCommandLine[cmdLine_String, OptionsPattern[]]:=
 Module[{async,os},
   {async,os}=OptionValue@{SSHRemote`Asynchronous,SSHRemote`OperatingSystem};
-  If[!BooleanQ[async],Message[General::opttf,AdjustCommandLine,async];Abort[]];
-  If[!MatchQ[os,"Windows"|"WSL"|"WSLNew"|"Unix"|"MacOSX"], Message[General::optvg,AdjustCommandLine,os,"Windows"|"WSL"|"WSLNew"|"Unix"|"MacOSX"]; Abort[]];
+  ValidateCondition[BooleanQ[async], General::opttf, Asynchronous, async];
+  ValidateOption[os, OperatingSystem, "Windows"|"WSL"|"WSLNew"|"Unix"|"MacOSX"];
 
   Switch[os,
     "Windows",
