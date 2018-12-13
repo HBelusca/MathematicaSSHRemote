@@ -60,14 +60,14 @@ General::npos=General::estep; (* "Value of option `1` -> `2` is not a positive i
 
 ValidateCondition::usage=
 "ValidateCondition[condition_, errorMsgStr_String, opts___, failAction_:Abort[]]
-ValidateCondition[condition_, Optional[errorMsgName_MessageName, General::asrtf], opts___, failAction_:Abort[]]
+ValidateCondition[condition_, errorMsgName_MessageName:(General::asrtf), opts___, failAction_:Abort[]]
 
 Verifies that the specified condition is True, and if not, displays an error message and aborts the computation or perform a user-specific failure action.
 The error message is specified via either a message name or a control string.";
 
 ValidateOption::usage=
 "ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgStr_String, failAction_:Abort[]]
-ValidateOption[optValue_, optName_Symbol, optPossibleValues_, Optional[errorMsgName_MessageName, General::optvg], failAction_:Abort[]]
+ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgName_MessageName:(General::optvg), failAction_:Abort[]]
 
 Verifies that the provided value 'optValue' matches one of the possible values 'optPossibleValues' for the option 'optName', and if not, displays an error message and aborts the computation or perform a user-specific failure action.
 The error message is specified via either a message name or a control string.";
@@ -79,7 +79,7 @@ SetAttributes[ValidateCondition, HoldAll]; (* 'HoldAll' attribute must be acquir
 ValidateCondition[condition_, errorMsgStr_String, opts___, failAction_:Abort[]] :=
   If[!condition, Print@StringForm[errorMsgStr, If[opts===Null, condition, Sequence@@{opts}]]; failAction];
 
-ValidateCondition[condition_, Optional[errorMsgName_MessageName, General::asrtf], opts___, failAction_:Abort[]] :=
+ValidateCondition[condition_, errorMsgName_MessageName:(General::asrtf), opts___, failAction_:Abort[]] :=
   If[!condition, Message[errorMsgName, If[opts===Null, condition, Sequence@@{opts}]]; failAction];
 
 SetAttributes[ValidateCondition, Protected];
@@ -89,7 +89,7 @@ SetAttributes[ValidateOption, HoldAll]; (* 'HoldAll' attribute must be acquired 
 ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgStr_String, failAction_:Abort[]] :=
   ValidateCondition[MatchQ[optValue, optPossibleValues], errorMsgStr, optName, optValue, optPossibleValues, failAction];
 
-ValidateOption[optValue_, optName_Symbol, optPossibleValues_, Optional[errorMsgName_MessageName, General::optvg], failAction_:Abort[]] :=
+ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgName_MessageName:(General::optvg), failAction_:Abort[]] :=
   ValidateCondition[MatchQ[optValue, optPossibleValues], errorMsgName, InputForm@optName, InputForm@optValue, InputForm@optPossibleValues, failAction];
 
 SetAttributes[ValidateOption, Protected];
@@ -105,9 +105,9 @@ Off[General::shdw]; (* Switch off shadowing warnings for Verbose, Asynchronous a
 
 
 SSHRemote`SshLaunchRemote::usage=
-"SshLaunchRemote[host_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- Uses $RemoteUserName and $RemoteCommand as default values.
-SshLaunchRemote[host_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- Uses $RemoteUserName as default value.
-SshLaunchRemote[host_String, username_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]]
+"SshLaunchRemote[host_String, n:(_Integer?NonNegative):1, OptionsPattern[]] -- Uses $RemoteUserName and $RemoteCommand as default values.
+SshLaunchRemote[host_String, cmdTemplate_String, n:(_Integer?NonNegative):1, OptionsPattern[]] -- Uses $RemoteUserName as default value.
+SshLaunchRemote[host_String, username_String, cmdTemplate_String, n:(_Integer?NonNegative):1, OptionsPattern[]]
 
 Starts n remote kernels via an SSH connection to the specified host and user. The specific remote kernel command is specified via the cmdTemplate parameter; see ?$RemoteCommand for the specific syntax.
 
@@ -148,6 +148,21 @@ sshRemoteKernel::usage = "sshRemoteKernel[..] is an extension of remoteKernel[..
 
 
 Begin["`Private`"]
+
+
+If[$VersionNumber<10.1,
+
+General::somefail = "`2` of `1` kernels failed to launch.";
+
+SubKernels`Protected`deleteFailed[l_List, msghead_:Null] :=
+With[{nl = DeleteCases[l, $Failed]},
+	If[Length[nl]<Length[l] && msghead=!=Null, Message[msghead::somefail, Length[l], Length[l]-Length[nl]]];
+	nl
+];
+
+SubKernels`Protected`firstOrFailed[l_List] := First[l, $Failed];
+
+];
 
 
 (* description language methods *)
@@ -196,13 +211,13 @@ Options[SshLaunchRemote]={SSHRemote`Multiplexing->False, SSHRemote`MultiplexingC
 
 SyntaxInformation[SshLaunchRemote]={"ArgumentsPattern"->{_,_,__,OptionsPattern[]}, "OptionNames"->(*optionNames[SshLaunchRemote]*){"Multiplexing","MultiplexingCommands","Verbose"}};
 
-SshLaunchRemote[host_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
+SshLaunchRemote[host_String, n:(_Integer?NonNegative):1, opts:OptionsPattern[]]:=
   SshLaunchRemote[host, $RemoteUserName, $RemoteCommand, n, opts];
 
-SshLaunchRemote[host_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
+SshLaunchRemote[host_String, cmdTemplate_String, n:(_Integer?NonNegative):1, opts:OptionsPattern[]]:=
   SshLaunchRemote[host, $RemoteUserName, cmdTemplate, n, opts];
 
-SshLaunchRemote[host_String, username_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], opts:OptionsPattern[]]:=
+SshLaunchRemote[host_String, username_String, cmdTemplate_String, n:(_Integer?NonNegative):1, opts:OptionsPattern[]]:=
 Module[{multiplex,multiplexCmds,verbose,java,wolframssh,mathssh,links,cmdLine,code},
   {multiplex,multiplexCmds,verbose}=OptionValue@{SSHRemote`Multiplexing,SSHRemote`MultiplexingCommands,Verbose};
   ValidateCondition[BooleanQ[multiplex], General::opttf, MultiplexingCommands, multiplex];
@@ -213,7 +228,7 @@ Module[{multiplex,multiplexCmds,verbose,java,wolframssh,mathssh,links,cmdLine,co
   If[multiplex,Print["SSH with Multiplexing"],Print["SSH with NO Multiplexing"]];
 
   (* Create new connection links *)
-  links=Table[LinkCreate[LinkProtocol->"TCPIP"],n];
+  links=Table[LinkCreate[LinkProtocol->"TCPIP"],{n}];
   links=SubKernels`Protected`deleteFailed[links,SshLaunchRemote];
 
   (* Start SSH multiplexing mode if needed *)
