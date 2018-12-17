@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     44219,       1117]
-NotebookOptionsPosition[     35648,        962]
-NotebookOutlinePosition[     37188,       1003]
-CellTagsIndexPosition[     36934,        994]
+NotebookDataLength[     64219,       1631]
+NotebookOptionsPosition[     48464,       1341]
+NotebookOutlinePosition[     52932,       1433]
+CellTagsIndexPosition[     52235,       1414]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell["Stop the controller kernel (optional!)", "Text",ExpressionUUID->"6d9274dc-
 
 Cell[BoxData[
  RowBox[{"Quit", "[", "]"}]], "Input",
- CellLabel->"In[25]:=",ExpressionUUID->"4b8f8273-dbb8-45e4-8e7f-cb11dafae3bb"],
+ CellLabel->"In[1]:=",ExpressionUUID->"4b8f8273-dbb8-45e4-8e7f-cb11dafae3bb"],
 
 Cell[CellGroupData[{
 
@@ -66,160 +66,267 @@ Cell[BoxData[
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"AdjustCommandLine", "SSHRemote`"}},
+           "Info23754052773-9025579", {"AdjustCommandLine", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["expr",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info23753635144-2697090", {"expr", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"expr", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["Multiplexing",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"Multiplexing", "SSHRemote`"}},
+           "Info23754052773-9025579", {"Multiplexing", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["names",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info23753635144-2697090", {"names", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"names", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["sep",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info23753635144-2697090", {"sep", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"sep", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
-         ButtonBox["sshRemoteKernel",
+         ButtonBox["SshLaunchRemote",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"sshRemoteKernel", "SSHRemote`"}},
+           "Info23754052773-9025579", {"SshLaunchRemote", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["SshRemoteMachine",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"SshRemoteMachine", "SSHRemote`"}},
+           "Info23754052773-9025579", {"SshRemoteMachine", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
-         ButtonBox["ValidateOption",
+         ButtonBox["$mathCmd",
           BaseStyle->"InformationLink",
+          ButtonData:>{"Info23754052773-9025579", {"$mathCmd", "SSHRemote`"}},
+          ButtonNote->"SSHRemote`"], 
+         ButtonBox["$SshCmdMultiplex",
+          BaseStyle->"InformationLink",
+          
           ButtonData:>{
-           "Info23753635144-2697090", {"ValidateOption", "SSHRemote`"}},
+           "Info23754052773-9025579", {"$SshCmdMultiplex", "SSHRemote`"}},
+          ButtonNote->"SSHRemote`"], 
+         ButtonBox["$SshMultiplexStart",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info23754052773-9025579", {"$SshMultiplexStart", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"]},
         {
          ButtonBox["Asynchronous",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"Asynchronous", "SSHRemote`"}},
+           "Info23754052773-9025579", {"Asynchronous", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["list",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info23753635144-2697090", {"list", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"list", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["MultiplexingCommands",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"MultiplexingCommands", "SSHRemote`"}},
+           "Info23754052773-9025579", {"MultiplexingCommands", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["OperatingSystem",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"OperatingSystem", "SSHRemote`"}},
+           "Info23754052773-9025579", {"OperatingSystem", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
-         ButtonBox["SshLaunchRemote",
+         ButtonBox["SshLaunchKernels",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info23753635144-2697090", {"SshLaunchRemote", "SSHRemote`"}},
+           "Info23754052773-9025579", {"SshLaunchKernels", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
-         ButtonBox["sshRemoteKernelObject",
+         ButtonBox["SSHRemote",
           BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info23753635144-2697090", {"sshRemoteKernelObject", "SSHRemote`"}},
-          ButtonNote->"SSHRemote`"], 
-         ButtonBox["ValidateCondition",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info23753635144-2697090", {"ValidateCondition", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"SSHRemote", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"], 
          ButtonBox["Verbose",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info23753635144-2697090", {"Verbose", "SSHRemote`"}},
+          ButtonData:>{"Info23754052773-9025579", {"Verbose", "SSHRemote`"}},
+          ButtonNote->"SSHRemote`"], 
+         ButtonBox["$SshCmd",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info23754052773-9025579", {"$SshCmd", "SSHRemote`"}},
+          ButtonNote->"SSHRemote`"], 
+         ButtonBox["$SshMultiplexCtlCmd",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info23754052773-9025579", {"$SshMultiplexCtlCmd", "SSHRemote`"}},
+          ButtonNote->"SSHRemote`"], 
+         ButtonBox["$SshSocketsPath",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info23754052773-9025579", {"$SshSocketsPath", "SSHRemote`"}},
           ButtonNote->"SSHRemote`"]}
        },
        DefaultBaseStyle->"InfoGrid",
        GridBoxItemSize->{"Columns" -> {{
-            Scaled[0.11875]}}}]}
+            Scaled[0.095]}}}]}
     },
     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
    Dynamic[Typeset`open$$],
    ImageSize->Automatic]]], "Print", \
-"InfoCell",ExpressionUUID->"2e9c8a00-628d-425a-a423-c205a6f3f50c"]
+"InfoCell",ExpressionUUID->"3a42fa6f-dc22-4f86-a9d5-b0798f1735ac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SSHRemote"}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"2f3e088b-7072-4641-b5c3-42130f1d368e"],
+
+Cell[BoxData["\<\"SSHRemote is a symbol that is used in the overloaded \
+definitions of RemoteMachine[] and LaunchRemote[] to specify that the \
+functionalities of the SSHRemote` package have to be used instead.\"\>"], \
+"Print", "PrintUsage",
+ CellTags->
+  "Info33754052773-9025579",ExpressionUUID->"b56dff64-7882-4f9d-8f79-\
+bbd12ec812aa"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "SSHRemote`SshRemoteMachine"}]], "Input",
- CellLabel->"In[3]:=",ExpressionUUID->"e54f835e-0032-409b-a34d-201cb66e3845"],
+ CellLabel->"In[4]:=",ExpressionUUID->"e54f835e-0032-409b-a34d-201cb66e3845"],
 
-Cell[BoxData["\<\"SshRemoteMachine[..] is an extension of \
-RemoteMachine[..].\"\>"], "Print", "PrintUsage",
+Cell[BoxData["\<\"SshRemoteMachine[host, username, (template), (n), opts...] \
+is a shortcut notation for RemoteMachine[host, SSHRemote, username, \
+(template), (n), opts...].\"\>"], "Print", "PrintUsage",
  CellTags->
-  "Info33753635144-2697090",ExpressionUUID->"b3c05b20-d9c5-45a8-8d70-\
-0712a92d140f"]
+  "Info43754052773-9025579",ExpressionUUID->"bb14f5f3-1be8-40f7-aac5-\
+e0ab60e26915"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "RemoteMachine"}]], "Input",
- CellLabel->"In[4]:=",ExpressionUUID->"134638b7-6ed5-449b-8922-14f718b7488f"],
+ CellLabel->"In[5]:=",ExpressionUUID->"134638b7-6ed5-449b-8922-14f718b7488f"],
 
 Cell[BoxData["\<\"RemoteMachine[host, (template), (n), opts...] is a \
 description of an available remote machine.\\n\\tThe host, template, and n \
 are the arguments to LaunchRemote; the default template is \
-$RemoteCommand.\"\>"], "Print", "PrintUsage",
+$RemoteCommand.\\nRemoteMachine[host, username, (template), (n), opts...] \
+also supports for an explicit user-name specification, whose default value is \
+$RemoteUserName.\\nRemoteMachine[host, SSHRemote, username, (template), (n), \
+opts...] specifies that the functionalities of the SSHRemote` package have to \
+be used.\"\>"], "Print", "PrintUsage",
  CellTags->
-  "Info43753635145-2697090",ExpressionUUID->"0e63b2ef-c061-43e7-a08d-\
-919ed06f7172"]
+  "Info53754052780-9025579",ExpressionUUID->"36328e1d-d218-4ec6-9ec8-\
+f95955e12646"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LaunchRemote"}]], "Input",
+ CellLabel->"In[6]:=",ExpressionUUID->"32af6be6-5d44-4697-911a-566cf44b410a"],
+
+Cell[BoxData["\<\"LaunchRemote[host, template, ConnectionType->LinkLaunch, \
+opts] launches a kernel on the given host using LinkLaunch; opts is passed as \
+options to LinkLaunch.\\n\\tLaunchRemote[host, template, \
+ConnectionType->LinkCreate, opts..] creates a local link and uses Run to \
+start a remote kernel, which is expected to open a connection to the link \
+created. opts is passed as options to LinkCreate.\\nLaunchRemote[host, \
+username, template, opts..] also supports for an explicit user-name \
+specification, whose default value is $RemoteUserName.\\nLaunchRemote[host, \
+SSHRemote, username, template, opts..] specifies that the functionalities of \
+the SSHRemote` package have to be used.\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info63754052780-9025579",ExpressionUUID->"cde5220b-17eb-4e19-8faa-\
+3575f59e7f0e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "SSHRemote`SshLaunchRemote"}]], "Input",
- CellLabel->"In[5]:=",ExpressionUUID->"aa307995-0b2f-4665-b1c9-a17d8159747b"],
+ CellLabel->"In[7]:=",ExpressionUUID->"aa307995-0b2f-4665-b1c9-a17d8159747b"],
 
-Cell[BoxData["\<\"SshLaunchRemote[host_String, \
-Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- Uses $RemoteUserName \
-and $RemoteCommand as default values.\\nSshLaunchRemote[host_String, \
-cmdTemplate_String, Optional[n_Integer?NonNegative,1], OptionsPattern[]] -- \
-Uses $RemoteUserName as default value.\\nSshLaunchRemote[host_String, \
-username_String, cmdTemplate_String, Optional[n_Integer?NonNegative,1], \
-OptionsPattern[]]\\n\\nStarts n remote kernels via an SSH connection to the \
-specified host and user. The specific remote kernel command is specified via \
-the cmdTemplate parameter; see ?$RemoteCommand for the specific \
-syntax.\\n\\nThe valid options are:\\n- Multiplexing\[Rule]True|False: \
-Whether or not a multiplexed SSH connection is used when starting n kernels. \
-When a multiplexed SSH connection is used, the login is requested only once, \
-and the remote kernels all share the same SSH connection. The default value \
-is False.\\n- MultiplexingCommands\[Rule]{startCmd_String, ctlCmd_String}: \
-Custom commands to manipulate the multiplexed SSH connection.\\n- Verbose\
-\[Rule]True|False: Whether or not diagnostic messages are displayed during \
-connection. The default value is False.\\n\"\>"], "Print", "PrintUsage",
+Cell[BoxData["\<\"SshLaunchRemote[host_String, n:(_Integer?NonNegative):1, \
+OptionsPattern[]] -- Uses $RemoteUserName and $RemoteCommand as default \
+values.\\nSshLaunchRemote[host_String, cmdTemplate_String, \
+n:(_Integer?NonNegative):1, OptionsPattern[]] -- Uses $RemoteUserName as \
+default value.\\nSshLaunchRemote[host_String, username_String, \
+cmdTemplate_String, n:(_Integer?NonNegative):1, OptionsPattern[]]\\n\\nStarts \
+n remote kernels via an SSH connection to the specified host and user. The \
+specific remote kernel command is specified via the cmdTemplate parameter; \
+see ?$RemoteCommand for the specific syntax.\\n\\nThe valid options are:\\n- \
+Multiplexing\[Rule]True|False: Whether or not a multiplexed SSH connection is \
+used when starting n kernels. When a multiplexed SSH connection is used, the \
+login is requested only once, and the remote kernels all share the same SSH \
+connection. The default value is False.\\n- \
+MultiplexingCommands\[Rule]{startCmd_String, ctlCmd_String}: Custom commands \
+to manipulate the multiplexed SSH connection.\\n- Verbose\[Rule]True|False: \
+Whether or not diagnostic messages are displayed during connection. The \
+default value is False.\\n\"\>"], "Print", "PrintUsage",
  CellTags->
-  "Info53753635145-2697090",ExpressionUUID->"d159df38-5e1d-409f-b274-\
-a9326d3ae129"]
+  "Info73754052780-9025579",ExpressionUUID->"dce674f0-389a-4fd5-a531-\
+8d55fde8d6c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LaunchKernels"}]], "Input",
+ CellLabel->"In[8]:=",ExpressionUUID->"97932d40-7d5f-40a5-a022-6d8cdfa6227b"],
+
+Cell[BoxData[
+ RowBox[{"\<\"\\!\\(\\*RowBox[{\\\"LaunchKernels\\\", \\\"[\\\", \
+\\\"]\\\"}]\\) launches all currently configured parallel \
+subkernels.\\n\\!\\(\\*RowBox[{\\\"LaunchKernels\\\", \\\"[\\\", \
+StyleBox[\\\"n\\\", \\\"TI\\\"], \\\"]\\\"}]\\) launches \\!\\(\\*StyleBox[\\\
+\"n\\\", \\\"TI\\\"]\\) local subkernels on the current \
+computer.\\n\\!\\(\\*RowBox[{\\\"LaunchKernels\\\", \\\"[\\\", \
+StyleBox[\\\"ker\\\", \\\"TI\\\"], \\\"]\\\"}]\\) launches the kernel \
+specified by \\!\\(\\*StyleBox[\\\"ker\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"LaunchKernels\\\", \\\"[\\\", RowBox[{\
+\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"ker\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"ker\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\"]\\\"}]\\) launches the kernels \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"ker\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\\).\"\>", "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/LaunchKernels"]}]], "Print", "PrintUsage",
+ CellTags->
+  "Info83754052780-9025579",ExpressionUUID->"b19cd7f8-e2a7-4276-a0b3-\
+2718fea92ddf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SSHRemote`SshLaunchKernels"}]], "Input",
+ CellLabel->"In[9]:=",ExpressionUUID->"5cb99c70-3a6c-4065-b6fb-55ac13994eda"],
+
+Cell[BoxData["\<\"SshLaunchKernels[host, username, (template), (n), opts...] \
+is a shortcut notation for LaunchKernels[SshRemoteMachine[host, username, \
+(template), (n), opts...]].\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info93754052780-9025579",ExpressionUUID->"a64d8cd2-5c80-4583-a97e-\
+97819c10054c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "SSHRemote`AdjustCommandLine"}]], "Input",
- CellLabel->"In[6]:=",ExpressionUUID->"b78821d2-3d5b-4c15-b055-631eeb86373d"],
+ CellLabel->"In[10]:=",ExpressionUUID->"b78821d2-3d5b-4c15-b055-631eeb86373d"],
 
 Cell[BoxData["\<\"AdjustCommandLine[cmdLine_String, \
 OptionsPattern[]]\\nAdjusts the specified command line for a specific \
@@ -237,15 +344,15 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10 for more \
 details.\\n  The default value is given by the value of \
 $OperatingSystem.\\n\"\>"], "Print", "PrintUsage",
  CellTags->
-  "Info63753635145-2697090",ExpressionUUID->"f686f1f0-65f2-43ab-91be-\
-85bd28ef96e5"]
+  "Info103754052781-9025579",ExpressionUUID->"4f9e7e33-af75-452a-8265-\
+b078bb543aeb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "SSHRemote`OperatingSystem"}]], "Input",
- CellLabel->"In[7]:=",ExpressionUUID->"eb0cf26e-6d0a-4895-a0dc-6f645bec4d6b"],
+ CellLabel->"In[11]:=",ExpressionUUID->"eb0cf26e-6d0a-4895-a0dc-6f645bec4d6b"],
 
 Cell[BoxData["\<\"OperatingSystem is an option for AdjustCommandLine[]. \
 OperatingSystem\[Rule]\\\"Windows\\\"|\\\"WSL\\\"|\\\"WSLNew\\\"|\\\"Unix\\\"|\
@@ -259,8 +366,8 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10 for more \
 details.\\nThe default value is given by the value of \
 $OperatingSystem.\"\>"], "Print", "PrintUsage",
  CellTags->
-  "Info73753635145-2697090",ExpressionUUID->"8a13a819-5e25-4dc6-ba96-\
-7edbc14f1aec"]
+  "Info113754052781-9025579",ExpressionUUID->"b4afd87c-e6e1-4590-ac0b-\
+7f983fe3257e"]
 }, Open  ]]
 }, Open  ]],
 
@@ -290,11 +397,11 @@ Cell[TextData[{
   ButtonData->{
     URL["https://linux.die.net/man/1/ssh"], None},
   ButtonNote->"https://linux.die.net/man/1/ssh"],
- " for more details.\nSSH options (not all are recognized by SSH clients):\n\
--f start as background process.\n-C enable compression.\n-v verbose mode.\n-x \
-disable X11 forwarding.\n-n prevent reading from stdin.\n-T disable \
+ " for more details.\nThe options (not all are recognized by SSH clients) \
+are:\n-f start as background process.\n-C enable compression.\n-v verbose \
+mode.\n-x disable X11 forwarding.\n-n prevent reading from stdin.\n-T disable \
 pseudo-tty allocation.\n-A enable SSH agent forwarding."
-}], "Text",ExpressionUUID->"a3516260-0a47-4225-b37c-d7a422abbc4f"],
+}], "Text",ExpressionUUID->"0a6c6cdf-9ac4-4e38-921d-8f13d69a6b17"],
 
 Cell[BoxData[{
  RowBox[{
@@ -368,7 +475,218 @@ ControlPath=~/.ssh/sockets/ssh-%r@%h:%p\>\""}]}], ";"}],
   "sshMultiplexCtlCmd", "=", 
    "\"\<ssh `3`@`1` -O `ctlcmd` `params` -o \
 ControlPath=~/.ssh/sockets/ssh-%r@%h:%p\>\""}], ";"}]}], "Input",
- CellLabel->"In[10]:=",ExpressionUUID->"3c9be9be-a677-4eab-a35d-a26a771221ae"],
+ CellLabel->"In[14]:=",ExpressionUUID->"3c9be9be-a677-4eab-a35d-a26a771221ae"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$SshSocketsPath"}]], "Input",
+ CellLabel->"In[25]:=",ExpressionUUID->"29332f78-bbfd-4576-b0d4-b0c85d576ae8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$SshSocketsPath defines the platform-and-user-specific SSH \
+sockets path.\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info253754052803-9025579",ExpressionUUID->"0a329046-d44f-4524-837d-\
+bb14af1c35c6"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$SshSocketsPath", "=", "\<\"~/.ssh/sockets/\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$SshSocketsPath],
+  Editable->False]], "Print",
+ CellTags->
+  "Info253754052803-9025579",ExpressionUUID->"a756e9a9-4f59-49cb-a718-\
+d1d8fa70e953"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$SshCmd"}]], "Input",
+ CellLabel->"In[26]:=",ExpressionUUID->"aacc1b6e-caee-4c75-b989-e167ce879eca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$SshCmd defines the standard SSH connection command that is \
+used for starting remote kernels. See also $mathCmd.\"\>"], "Print", \
+"PrintUsage",
+ CellTags->
+  "Info263754052805-9025579",ExpressionUUID->"b97e3c62-371c-4424-84f3-\
+3ef4140f4651"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$SshCmd", "=", "\<\"ssh `3`@`1` -C -x -n -T -A `ports`\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$SshCmd],
+  Editable->False]], "Print",
+ CellTags->
+  "Info263754052805-9025579",ExpressionUUID->"4c4c9a27-493e-47bf-8af0-\
+1abb2d3de600"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$SshCmdMultiplex"}]], "Input",
+ CellLabel->"In[27]:=",ExpressionUUID->"9513e400-613a-4bb2-8d6e-14efb05a2bd6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$SshCmdMultiplex defines the SSH connection command that is \
+used for starting remote kernels when SSH multiplexed connections are used.\"\
+\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info273754052806-9025579",ExpressionUUID->"23edb899-de68-4c4c-8019-\
+7316bc40c53d"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+        "$SshCmdMultiplex", 
+         "=", "\<\"ssh `3`@`1` -f -C -x -n -T -A -o ControlMaster=no -o \
+ControlPath=~/.ssh/sockets/ssh-%r@%h:%p\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$SshCmdMultiplex],
+  Editable->False]], "Print",
+ CellTags->
+  "Info273754052806-9025579",ExpressionUUID->"db63298f-d13e-45f9-88b2-\
+d4e76fab516e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$SshMultiplexStart"}]], "Input",
+ CellLabel->"In[28]:=",ExpressionUUID->"3179f71f-d517-4167-86e0-7db45c56157c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$SshMultiplexStart defines the SSH command that is used to \
+start a new SSH multiplexed connection.\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info283754052808-9025579",ExpressionUUID->"b7ca39f1-074f-4057-8eea-\
+d91792982675"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+        "$SshMultiplexStart", 
+         "=", "\<\"ssh `3`@`1` -fN -C -x -n -T -A -o ControlMaster=yes -o \
+ControlPath=~/.ssh/sockets/ssh-%r@%h:%p\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$SshMultiplexStart],
+  Editable->False]], "Print",
+ CellTags->
+  "Info283754052808-9025579",ExpressionUUID->"1bd892ed-d2f4-41ad-a052-\
+5cbe8e92955a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$SshMultiplexCtlCmd"}]], "Input",
+ CellLabel->"In[29]:=",ExpressionUUID->"83b87ce9-a211-4a0a-bacd-914561abee02"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$SshMultiplexCtlCmd defines the SSH command that is used to \
+control existing SSH multiplexed connections.\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info293754052809-9025579",ExpressionUUID->"c63dff1c-cac2-4eb7-90f5-\
+64fff45d3625"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+        "$SshMultiplexCtlCmd", 
+         "=", "\<\"ssh `3`@`1` -O `ctlcmd` `params` -o \
+ControlPath=~/.ssh/sockets/ssh-%r@%h:%p\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$SshMultiplexCtlCmd],
+  Editable->False]], "Print",
+ CellTags->
+  "Info293754052809-9025579",ExpressionUUID->"194a468b-fb6b-46da-a342-\
+89624eb8bab5"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["The remote Mathematica kernel launch command.", "Text",ExpressionUUID->"359ac7eb-5f82-411b-afb6-d77365077e02"],
 
@@ -396,7 +714,50 @@ Cell[BoxData[
     RowBox[{"(*", 
      RowBox[{"<>", "\"\<&; exit\>\""}], "*)"}], "<>", "\"\<\\\"\>\""}]}], 
   ";"}]], "Input",
- CellLabel->"In[14]:=",ExpressionUUID->"1899b80a-d13e-4022-9160-2a8b7f69d219"]
+ CellLabel->"In[23]:=",ExpressionUUID->"1899b80a-d13e-4022-9160-2a8b7f69d219"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "$mathCmd"}]], "Input",
+ CellLabel->"In[30]:=",ExpressionUUID->"ae96e708-3fef-411c-a77e-b169e4fdb1eb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$mathCmd is the remote Mathematica kernel launch command. \
+See also $mathkernel.\"\>"], "Print", "PrintUsage",
+ CellTags->
+  "Info303754052813-9025579",ExpressionUUID->"a244c476-10be-4f6c-af1b-\
+a218592da53d"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+        "$mathCmd", 
+         "=", "\<\"\\\"MathKernel -wstp -lmverbose -LinkMode Connect `4` \
+-LinkName `2` -subkernel\\\"\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SSHRemote`$mathCmd],
+  Editable->False]], "Print",
+ CellTags->
+  "Info303754052813-9025579",ExpressionUUID->"c3407cb8-8dd7-4031-86a1-\
+d7ea589d2c1a"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -412,25 +773,22 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"kernels", "=", 
-  RowBox[{"(*", " ", 
-   RowBox[{"SshLaunchRemote", "[", "]"}], " ", "*)"}], 
-  RowBox[{"LaunchKernels", "[", 
-   RowBox[{"SshRemoteMachine", "[", 
-    RowBox[{"host", ",", "username", ",", 
-     RowBox[{"AdjustCommandLine", "[", 
-      RowBox[{
-       RowBox[{"StringRiffle", "@", 
-        RowBox[{"{", 
-         RowBox[{"sshCmd", ",", "mathCmd"}], "}"}]}], ",", 
-       RowBox[{"Asynchronous", "\[Rule]", "True"}]}], "]"}], ",", "2"}], 
-    "]"}], "]"}]}]], "Input",
- CellLabel->"In[15]:=",ExpressionUUID->"5e3360bb-f913-4b23-93ea-29ff8d426938"],
+  RowBox[{"SshLaunchKernels", "[", 
+   RowBox[{"host", ",", "username", ",", 
+    RowBox[{"AdjustCommandLine", "[", 
+     RowBox[{
+      RowBox[{"StringRiffle", "@", 
+       RowBox[{"{", 
+        RowBox[{"sshCmd", ",", "mathCmd"}], "}"}]}], ",", 
+      RowBox[{"Asynchronous", "\[Rule]", "True"}]}], "]"}], ",", "2"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"5e3360bb-f913-4b23-93ea-29ff8d426938"],
 
 Cell[BoxData[
  FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[15]:=",ExpressionUUID->"81eefebe-15d5-4722-a189-14ea8d6c3146"],
+In[31]:=",ExpressionUUID->"5d875724-be6c-4d86-9ee6-0db12072555d"],
 
 Cell[BoxData[
  FormBox[
@@ -444,7 +802,7 @@ Cell[BoxData[
      RowBox[{"\<\"KernelObject\"\>", "(", 
       RowBox[{"2", ",", "\<\"host.phy.com\"\>"}], ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[15]=",ExpressionUUID->"bb4fc6db-95b0-4e05-8df7-677b73d5220f"]
+ CellLabel->"Out[31]=",ExpressionUUID->"60875a9c-81bc-4cbc-9fda-cc85c8461bf7"]
 }, Open  ]],
 
 Cell["We close all the kernels.", "Text",ExpressionUUID->"948e54b6-fe7f-4d4c-9a1f-90e27269852f"],
@@ -453,7 +811,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"CloseKernels", "[", "kernels", "]"}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"da320f56-80a7-41ed-87d3-25e3f029c609"],
+ CellLabel->"In[32]:=",ExpressionUUID->"da320f56-80a7-41ed-87d3-25e3f029c609"],
 
 Cell[BoxData[
  FormBox[
@@ -469,7 +827,7 @@ Cell[BoxData[
       RowBox[{"2", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
       ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[16]=",ExpressionUUID->"4ef8dcd8-99ce-405a-983d-efa4d11d2887"]
+ CellLabel->"Out[32]=",ExpressionUUID->"ab4f064c-f040-47fa-971f-04e115873382"]
 }, Open  ]],
 
 Cell["\<\
@@ -483,22 +841,18 @@ Cell[BoxData[
  RowBox[{"kernels", "=", 
   RowBox[{"Flatten", "@", 
    RowBox[{"Table", "[", 
-    RowBox[{"(*", " ", 
-     RowBox[{"SshLaunchRemote", "[", "]"}], " ", "*)"}], 
     RowBox[{
-     RowBox[{"LaunchKernels", "[", 
-      RowBox[{"SshRemoteMachine", "[", 
-       RowBox[{"host", ",", "username", ",", 
-        RowBox[{"AdjustCommandLine", "[", 
-         RowBox[{
-          RowBox[{"StringRiffle", "@", 
-           RowBox[{"{", 
-            RowBox[{"sshCmd", ",", "mathCmd"}], "}"}]}], ",", 
-          RowBox[{"Asynchronous", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
-      "]"}], ",", 
+     RowBox[{"SshLaunchKernels", "[", 
+      RowBox[{"host", ",", "username", ",", 
+       RowBox[{"AdjustCommandLine", "[", 
+        RowBox[{
+         RowBox[{"StringRiffle", "@", 
+          RowBox[{"{", 
+           RowBox[{"sshCmd", ",", "mathCmd"}], "}"}]}], ",", 
+         RowBox[{"Asynchronous", "\[Rule]", "True"}]}], "]"}]}], "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "4"}], "}"}]}], "]"}]}]}]], "Input",
- CellLabel->"In[17]:=",ExpressionUUID->"531728c8-de36-4631-95e1-9a3c8ae22522"],
+ CellLabel->"In[33]:=",ExpressionUUID->"531728c8-de36-4631-95e1-9a3c8ae22522"],
 
 Cell[CellGroupData[{
 
@@ -506,25 +860,25 @@ Cell[BoxData[
  FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[17]:=",ExpressionUUID->"fb6c9c62-aa99-4eed-b3a8-a97059d87b49"],
+In[33]:=",ExpressionUUID->"da0351ac-8330-44fb-8891-077ba3fb5faa"],
 
 Cell[BoxData[
  FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[17]:=",ExpressionUUID->"5db76a43-92f0-47e5-b91c-b26b6be5fe2a"],
+In[33]:=",ExpressionUUID->"f5e18d86-d86f-436a-b0c3-95bd6a291a6e"],
 
 Cell[BoxData[
  FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[17]:=",ExpressionUUID->"e90d3e72-ce71-42e6-b927-c0ef50ca386f"],
+In[33]:=",ExpressionUUID->"bdebbba9-d3c2-40db-a331-809efc050c24"],
 
 Cell[BoxData[
  FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[17]:=",ExpressionUUID->"2e9ffb86-d5f9-49c4-a42b-38299a07eb61"]
+In[33]:=",ExpressionUUID->"b2a43459-2245-490e-b57d-5c20c62c78fd"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -547,7 +901,7 @@ Cell[BoxData[
      RowBox[{"\<\"KernelObject\"\>", "(", 
       RowBox[{"6", ",", "\<\"host.phy.com\"\>"}], ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[17]=",ExpressionUUID->"618687ef-aebb-4727-b7f0-c3dccd53120c"]
+ CellLabel->"Out[33]=",ExpressionUUID->"7040eb7e-2a22-425e-ba06-e4ee538e83f4"]
 }, Open  ]],
 
 Cell["We close all the kernels.", "Text",ExpressionUUID->"46e6c187-901d-40b9-97e5-2bdcdbcd90ba"],
@@ -556,7 +910,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"CloseKernels", "[", "kernels", "]"}]], "Input",
- CellLabel->"In[18]:=",ExpressionUUID->"3c6d46ca-a8d6-4f2e-8f18-9e05b4a48fb6"],
+ CellLabel->"In[34]:=",ExpressionUUID->"3c6d46ca-a8d6-4f2e-8f18-9e05b4a48fb6"],
 
 Cell[BoxData[
  FormBox[
@@ -582,7 +936,7 @@ Cell[BoxData[
       RowBox[{"6", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
       ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[18]=",ExpressionUUID->"1d90bfe3-c0b2-45de-a0bf-bea38254b79f"]
+ CellLabel->"Out[34]=",ExpressionUUID->"ee8fd0b8-48fd-49a1-a349-4d3db4847604"]
 }, Open  ]]
 }, Open  ]],
 
@@ -592,88 +946,46 @@ Cell["For *nix only", "Subsection",ExpressionUUID->"cdab401b-8db9-450d-bbc0-3d73
 
 Cell["\<\
 We start four remote kernels on a single multiplexed SSH connection; the \
-connection password is asked only once.\
+connection password is asked only once. The output is done in the $stdin of \
+Mathematica!\
 \>", "Text",ExpressionUUID->"de6b4373-7b11-4c80-92b6-5be2e31ba878"],
 
 Cell[BoxData[
  RowBox[{"kernels", "=", 
-  RowBox[{"(*", " ", 
-   RowBox[{"SshLaunchRemote", "[", "]"}], " ", "*)"}], 
-  RowBox[{"LaunchKernels", "[", "\[IndentingNewLine]", 
-   RowBox[{"SshRemoteMachine", "[", 
-    RowBox[{"host", ",", "username", ",", 
-     RowBox[{"AdjustCommandLine", "[", 
-      RowBox[{
-       RowBox[{"StringRiffle", "@", 
-        RowBox[{"{", 
-         RowBox[{"sshCmdMultiplex", ",", "mathCmd"}], "}"}]}], ",", 
-       RowBox[{"Asynchronous", "\[Rule]", "True"}]}], " ", 
-      RowBox[{"(*", 
-       RowBox[{",", 
-        RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
-      "]"}], ",", "4", " ", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "In", " ", "multiplex", " ", "mode", " ", "we", " ", "cannot", " ", 
-       "use", " ", "more", " ", "than", " ", "MaxSessions", 
-       RowBox[{"(", 
-        RowBox[{"=", 
-         RowBox[{"10", " ", "by", " ", "default"}]}], ")"}], " ", "sessions", 
-       " ", "per", " ", "connection"}], " ", "*)"}], ",", 
-     RowBox[{"Multiplexing", "\[Rule]", "True"}], ",", 
-     RowBox[{"MultiplexingCommands", "\[Rule]", 
+  RowBox[{"SshLaunchKernels", "[", 
+   RowBox[{"host", ",", "username", ",", 
+    RowBox[{"AdjustCommandLine", "[", 
+     RowBox[{
+      RowBox[{"StringRiffle", "@", 
+       RowBox[{"{", 
+        RowBox[{"sshCmdMultiplex", ",", "mathCmd"}], "}"}]}], ",", 
+      RowBox[{"Asynchronous", "\[Rule]", "True"}]}], " ", 
+     RowBox[{"(*", 
+      RowBox[{",", 
+       RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
+     "]"}], ",", "4", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "In", " ", "multiplex", " ", "mode", " ", "we", " ", "cannot", " ", 
+      "use", " ", "more", " ", "than", " ", "MaxSessions", 
       RowBox[{"(", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"AdjustCommandLine", "[", "#", 
-          RowBox[{"(*", 
-           RowBox[{",", 
-            RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
-          "]"}], "&"}], "/@", 
-        RowBox[{"{", 
-         RowBox[{"sshMultiplexStart", ",", "sshMultiplexCtlCmd"}], "}"}]}], 
-       ")"}]}]}], "]"}], "\[IndentingNewLine]", "]"}]}]], "Input",ExpressionUU\
-ID->"deb05da8-10d3-47d5-bfcb-e837109e3532"],
-
-Cell[BoxData[
- RowBox[{"kernels", "=", 
-  RowBox[{"(*", " ", 
-   RowBox[{"SshLaunchRemote", "[", "]"}], " ", "*)"}], 
-  RowBox[{"LaunchKernels", "[", "\[IndentingNewLine]", 
-   RowBox[{"SshRemoteMachine", "[", 
-    RowBox[{"host", ",", "username", ",", 
-     RowBox[{"AdjustCommandLine", "[", 
+       RowBox[{"=", 
+        RowBox[{"10", " ", "by", " ", "default"}]}], ")"}], " ", "sessions", 
+      " ", "per", " ", "connection"}], " ", "*)"}], ",", 
+    RowBox[{"Multiplexing", "\[Rule]", "True"}], ",", 
+    RowBox[{"MultiplexingCommands", "\[Rule]", 
+     RowBox[{"(", 
       RowBox[{
-       RowBox[{"StringRiffle", "@", 
-        RowBox[{"{", 
-         RowBox[{"sshCmdMultiplex", ",", "mathCmd"}], "}"}]}], ",", 
-       RowBox[{"Asynchronous", "\[Rule]", "True"}]}], " ", 
-      RowBox[{"(*", 
-       RowBox[{",", 
-        RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
-      "]"}], ",", "4", " ", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "In", " ", "multiplex", " ", "mode", " ", "we", " ", "cannot", " ", 
-       "use", " ", "more", " ", "than", " ", "MaxSessions", 
-       RowBox[{"(", 
-        RowBox[{"=", 
-         RowBox[{"10", " ", "by", " ", "default"}]}], ")"}], " ", "sessions", 
-       " ", "per", " ", "connection"}], " ", "*)"}], ",", 
-     RowBox[{"Multiplexing", "\[Rule]", "True"}], ",", 
-     RowBox[{"MultiplexingCommands", "\[Rule]", 
-      RowBox[{"(", 
        RowBox[{
-        RowBox[{
-         RowBox[{"AdjustCommandLine", "[", "#", 
-          RowBox[{"(*", 
-           RowBox[{",", 
-            RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
-          "]"}], "&"}], "/@", 
-        RowBox[{"{", 
-         RowBox[{"sshMultiplexStart", ",", "sshMultiplexCtlCmd"}], "}"}]}], 
-       ")"}]}]}], "]"}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"f502f728-0d0c-4805-b3ee-b12779251f73"]
+        RowBox[{"AdjustCommandLine", "[", "#", 
+         RowBox[{"(*", 
+          RowBox[{",", 
+           RowBox[{"OperatingSystem", "\[Rule]", "\"\<Unix\>\""}]}], "*)"}], 
+         "]"}], "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{"sshMultiplexStart", ",", "sshMultiplexCtlCmd"}], "}"}]}], 
+      ")"}]}]}], "]"}]}]], "Input",ExpressionUUID->"deb05da8-10d3-47d5-bfcb-\
+e837109e3532"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -711,6 +1023,76 @@ ControlMaster=no\>\""}], "*)"}], ";"}], "\[IndentingNewLine]",
    "\[IndentingNewLine]", "*)"}]}]], "Input",ExpressionUUID->"631af003-776f-\
 4be8-99e0-3d0234b82d11"],
 
+Cell["\<\
+We start two remote kernels at the same time, blocking until the user enters \
+the password and then going to background (will ask the connection password \
+twice, unless you have set up ssh-agent authentication).\
+\>", "Text",ExpressionUUID->"67f4e3e4-52f1-4026-a74e-2c090ad386d7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"kernels", "=", 
+  RowBox[{"SshLaunchKernels", "[", 
+   RowBox[{"host", ",", "username", ",", 
+    RowBox[{"AdjustCommandLine", "[", 
+     RowBox[{
+      RowBox[{"StringRiffle", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"sshCmd", "<>", "\"\< -f\>\""}], ",", "mathCmd"}], "}"}]}], 
+      ",", 
+      RowBox[{"Asynchronous", "\[Rule]", "False"}], ",", 
+      RowBox[{"OperatingSystem", "\[Rule]", "\"\<WSL\>\""}]}], "]"}], ",", 
+    "2"}], "]"}]}]], "Input",
+ CellLabel->"In[35]:=",ExpressionUUID->"d5eddf29-e9aa-4def-907a-a92d36071cb6"],
+
+Cell[BoxData[
+ FormBox["\<\"SSH with NO Multiplexing\"\>", TraditionalForm]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[35]:=",ExpressionUUID->"9a85f7aa-73e7-472e-9808-fc36dd547118"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"7", ",", "\<\"host.phy.com\"\>"}], ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"8", ",", "\<\"host.phy.com\"\>"}], ")"}],
+     TraditionalForm]}], "}"}], TraditionalForm]], "Output",
+ CellLabel->"Out[35]=",ExpressionUUID->"070346ba-0427-43d5-8758-ea75715ca70d"]
+}, Open  ]],
+
+Cell["We close all the kernels.", "Text",ExpressionUUID->"ac23edcb-1661-4944-bf0a-89cde4338a61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloseKernels", "[", "kernels", "]"}]], "Input",
+ CellLabel->"In[36]:=",ExpressionUUID->"84692ac3-d9d7-4fb8-8ee4-83832f6deb69"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"7", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
+      ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"8", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
+      ")"}],
+     TraditionalForm]}], "}"}], TraditionalForm]], "Output",
+ CellLabel->"Out[36]=",ExpressionUUID->"b94b8601-4c6f-4f9d-94fa-8baa75f0c5a5"]
+}, Open  ]],
+
 Cell[TextData[{
  "We start four remote kernels on a single multiplexed SSH connection; the \
 connection password is asked only once.\nThis example requires that you have \
@@ -740,46 +1122,43 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"kernels", "=", 
-  RowBox[{"(*", " ", 
-   RowBox[{"SshLaunchRemote", "[", "]"}], " ", "*)"}], 
-  RowBox[{"LaunchKernels", "[", "\[IndentingNewLine]", 
-   RowBox[{"SshRemoteMachine", "[", 
-    RowBox[{"host", ",", "username", ",", 
-     RowBox[{"AdjustCommandLine", "[", 
-      RowBox[{
-       RowBox[{"StringRiffle", "@", 
-        RowBox[{"{", 
-         RowBox[{"sshCmdMultiplex", ",", "mathCmd"}], "}"}]}], ",", 
-       RowBox[{"Asynchronous", "\[Rule]", "True"}], ",", 
-       RowBox[{"OperatingSystem", "\[Rule]", "\"\<WSL\>\""}]}], "]"}], ",", 
-     "4", " ", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "In", " ", "multiplex", " ", "mode", " ", "we", " ", "cannot", " ", 
-       "use", " ", "more", " ", "than", " ", "MaxSessions", 
-       RowBox[{"(", 
-        RowBox[{"=", 
-         RowBox[{"10", " ", "by", " ", "default"}]}], ")"}], " ", "sessions", 
-       " ", "per", " ", "connection"}], " ", "*)"}], ",", 
-     RowBox[{"Multiplexing", "\[Rule]", "True"}], ",", 
-     RowBox[{"MultiplexingCommands", "\[Rule]", 
+  RowBox[{"SshLaunchKernels", "[", 
+   RowBox[{"host", ",", "username", ",", 
+    RowBox[{"AdjustCommandLine", "[", 
+     RowBox[{
+      RowBox[{"StringRiffle", "@", 
+       RowBox[{"{", 
+        RowBox[{"sshCmdMultiplex", ",", "mathCmd"}], "}"}]}], ",", 
+      RowBox[{"Asynchronous", "\[Rule]", "True"}], ",", 
+      RowBox[{"OperatingSystem", "\[Rule]", "\"\<WSL\>\""}]}], "]"}], ",", 
+    "4", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "In", " ", "multiplex", " ", "mode", " ", "we", " ", "cannot", " ", 
+      "use", " ", "more", " ", "than", " ", "MaxSessions", 
       RowBox[{"(", 
+       RowBox[{"=", 
+        RowBox[{"10", " ", "by", " ", "default"}]}], ")"}], " ", "sessions", 
+      " ", "per", " ", "connection"}], " ", "*)"}], ",", 
+    RowBox[{"Multiplexing", "\[Rule]", "True"}], ",", 
+    RowBox[{"MultiplexingCommands", "\[Rule]", 
+     RowBox[{"(", 
+      RowBox[{
        RowBox[{
-        RowBox[{
-         RowBox[{"AdjustCommandLine", "[", 
-          RowBox[{"#", ",", 
-           RowBox[{"OperatingSystem", "\[Rule]", "\"\<WSL\>\""}]}], "]"}], 
-         "&"}], "/@", 
-        RowBox[{"{", 
-         RowBox[{"sshMultiplexStart", ",", "sshMultiplexCtlCmd"}], "}"}]}], 
-       ")"}]}]}], "]"}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellLabel->"In[20]:=",ExpressionUUID->"3806fd16-121c-47e1-9ade-f6ddcf2d9886"],
+        RowBox[{"AdjustCommandLine", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"OperatingSystem", "\[Rule]", "\"\<WSL\>\""}]}], "]"}], 
+        "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{"sshMultiplexStart", ",", "sshMultiplexCtlCmd"}], "}"}]}], 
+      ")"}]}]}], "]"}]}]], "Input",
+ CellLabel->"In[37]:=",ExpressionUUID->"3806fd16-121c-47e1-9ade-f6ddcf2d9886"],
 
 Cell[BoxData[
  FormBox["\<\"SSH with Multiplexing\"\>", TraditionalForm]], "Print",
  CellLabel->
   "During evaluation of \
-In[20]:=",ExpressionUUID->"f7714807-e54b-452f-a40b-9642d5c209ab"],
+In[37]:=",ExpressionUUID->"78f79d19-2d36-4f3c-91f0-dc1db9e53705"],
 
 Cell[BoxData[
  FormBox[
@@ -787,21 +1166,21 @@ Cell[BoxData[
    RowBox[{
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"7", ",", "\<\"host.phy.com\"\>"}], ")"}],
-     TraditionalForm], ",", 
-    FormBox[
-     RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"8", ",", "\<\"host.phy.com\"\>"}], ")"}],
-     TraditionalForm], ",", 
-    FormBox[
-     RowBox[{"\<\"KernelObject\"\>", "(", 
       RowBox[{"9", ",", "\<\"host.phy.com\"\>"}], ")"}],
      TraditionalForm], ",", 
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
       RowBox[{"10", ",", "\<\"host.phy.com\"\>"}], ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"11", ",", "\<\"host.phy.com\"\>"}], ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"12", ",", "\<\"host.phy.com\"\>"}], ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[20]=",ExpressionUUID->"d72b090c-c4ab-4bb6-a8a1-60c632299b4d"]
+ CellLabel->"Out[37]=",ExpressionUUID->"1467ec48-29e2-4e59-a89e-ead485018ff8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -815,7 +1194,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"LaunchKernels", "[", "2", "]"}]], "Input",
- CellLabel->"In[21]:=",ExpressionUUID->"648d5d75-b467-41b4-b4a4-88419667910a"],
+ CellLabel->"In[38]:=",ExpressionUUID->"648d5d75-b467-41b4-b4a4-88419667910a"],
 
 Cell[BoxData[
  FormBox[
@@ -823,13 +1202,13 @@ Cell[BoxData[
    RowBox[{
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"11", ",", "\<\"local\"\>"}], ")"}],
+      RowBox[{"13", ",", "\<\"local\"\>"}], ")"}],
      TraditionalForm], ",", 
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"12", ",", "\<\"local\"\>"}], ")"}],
+      RowBox[{"14", ",", "\<\"local\"\>"}], ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[21]=",ExpressionUUID->"3ee9401b-83e8-4a99-95e9-25f599906f56"]
+ CellLabel->"Out[38]=",ExpressionUUID->"5f277629-8771-460e-bdce-d21aa47b136d"]
 }, Open  ]],
 
 Cell["List some characteristics of all the started kernels.", "Text",ExpressionUUID->"362b1c46-0885-4566-b90c-b08c5dd95241"],
@@ -872,7 +1251,7 @@ Cell[BoxData[
      RowBox[{"All", ",", 
       RowBox[{"2", "\[Rule]", "True"}]}], "}"}]}]}], "\[IndentingNewLine]", 
   "]"}]], "Input",
- CellLabel->"In[22]:=",ExpressionUUID->"d4216e26-d570-4794-92e7-a5165cf3521a"],
+ CellLabel->"In[39]:=",ExpressionUUID->"d4216e26-d570-4794-92e7-a5165cf3521a"],
 
 Cell[BoxData[
  FormBox[
@@ -890,29 +1269,29 @@ Cell[BoxData[
       StyleBox["\<\"$MachineDomains\"\>",
        StripOnInput->False,
        FontWeight->Bold]},
-     {"sshRemoteKernel", "7", "\<\"host\"\>", 
+     {"remoteKernel", "9", "\<\"host\"\>", 
       RowBox[{"{", "\<\"phy.com\"\>", "}"}]},
-     {"sshRemoteKernel", "8", "\<\"host\"\>", 
+     {"remoteKernel", "10", "\<\"host\"\>", 
       RowBox[{"{", "\<\"phy.com\"\>", "}"}]},
-     {"sshRemoteKernel", "9", "\<\"host\"\>", 
+     {"remoteKernel", "11", "\<\"host\"\>", 
       RowBox[{"{", "\<\"phy.com\"\>", "}"}]},
-     {"sshRemoteKernel", "10", "\<\"host\"\>", 
+     {"remoteKernel", "12", "\<\"host\"\>", 
       RowBox[{"{", "\<\"phy.com\"\>", "}"}]},
-     {"SubKernels`LocalKernels`localKernel", "11", "\<\"desktop-gpv6hgd\"\>", 
+     {"SubKernels`LocalKernels`localKernel", "13", "\<\"desktop-gpv6hgd\"\>", 
       RowBox[{"{", "\<\"mshome.net\"\>", "}"}]},
-     {"SubKernels`LocalKernels`localKernel", "12", "\<\"desktop-gpv6hgd\"\>", 
+     {"SubKernels`LocalKernels`localKernel", "14", "\<\"desktop-gpv6hgd\"\>", 
       RowBox[{"{", "\<\"mshome.net\"\>", "}"}]}
     },
     AutoDelete->False,
     GridBoxDividers->{"Columns" -> {{True}}, "RowsIndexed" -> {2 -> True}},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Grid"], TraditionalForm]], "Output",
- CellLabel->"Out[22]=",ExpressionUUID->"848374a8-113f-4976-b073-ce06e67236e6"]
+ CellLabel->"Out[39]=",ExpressionUUID->"309dd8f0-abe9-4ced-8583-ffd99fda3455"]
 }, Open  ]],
 
 Cell[BoxData[
  RowBox[{"Parallel`Developer`KernelStatus", "[", "]"}]], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"a78e9c05-78cf-452b-b5db-1ffe4a874e08"],
+ CellLabel->"In[40]:=",ExpressionUUID->"a78e9c05-78cf-452b-b5db-1ffe4a874e08"],
 
 Cell["Close all the kernels.", "Text",ExpressionUUID->"064d28fe-6a0b-4474-a701-68f6ae4b8bc1"],
 
@@ -920,22 +1299,12 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"CloseKernels", "[", "]"}]], "Input",
- CellLabel->"In[24]:=",ExpressionUUID->"8ecb67c7-34b4-4434-8e2e-63be77c42ebb"],
+ CellLabel->"In[41]:=",ExpressionUUID->"8ecb67c7-34b4-4434-8e2e-63be77c42ebb"],
 
 Cell[BoxData[
  FormBox[
   RowBox[{"{", 
    RowBox[{
-    FormBox[
-     RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"7", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
-      ")"}],
-     TraditionalForm], ",", 
-    FormBox[
-     RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"8", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
-      ")"}],
-     TraditionalForm], ",", 
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
       RowBox[{"9", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
@@ -948,13 +1317,23 @@ Cell[BoxData[
      TraditionalForm], ",", 
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"11", ",", "\<\"local\"\>", ",", "\<\"<defunct>\"\>"}], ")"}],
+      RowBox[{"11", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
+      ")"}],
      TraditionalForm], ",", 
     FormBox[
      RowBox[{"\<\"KernelObject\"\>", "(", 
-      RowBox[{"12", ",", "\<\"local\"\>", ",", "\<\"<defunct>\"\>"}], ")"}],
+      RowBox[{"12", ",", "\<\"host.phy.com\"\>", ",", "\<\"<defunct>\"\>"}], 
+      ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"13", ",", "\<\"local\"\>", ",", "\<\"<defunct>\"\>"}], ")"}],
+     TraditionalForm], ",", 
+    FormBox[
+     RowBox[{"\<\"KernelObject\"\>", "(", 
+      RowBox[{"14", ",", "\<\"local\"\>", ",", "\<\"<defunct>\"\>"}], ")"}],
      TraditionalForm]}], "}"}], TraditionalForm]], "Output",
- CellLabel->"Out[24]=",ExpressionUUID->"4cfd489e-f9be-457b-90b0-d8adb727b8db"]
+ CellLabel->"Out[41]=",ExpressionUUID->"4d0e38c9-e0d6-4c8d-bbe1-020bab8739c1"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -965,7 +1344,6 @@ WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 Visible->True,
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 ShowSelection->True,
-Magnification->1.100000023841858,
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -974,147 +1352,283 @@ StyleDefinitions->"Default.nb"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Info33753635144-2697090"->{
-  Cell[5891, 167, 206, 4, 48, "Print",ExpressionUUID->"b3c05b20-d9c5-45a8-8d70-0712a92d140f",
-   CellTags->"Info33753635144-2697090"]},
- "Info43753635145-2697090"->{
-  Cell[6271, 180, 352, 6, 73, "Print",ExpressionUUID->"0e63b2ef-c061-43e7-a08d-919ed06f7172",
-   CellTags->"Info43753635145-2697090"]},
- "Info53753635145-2697090"->{
-  Cell[6809, 195, 1354, 19, 289, "Print",ExpressionUUID->"d159df38-5e1d-409f-b274-a9326d3ae129",
-   CellTags->"Info53753635145-2697090"]},
- "Info63753635145-2697090"->{
-  Cell[8351, 223, 1083, 17, 265, "Print",ExpressionUUID->"f686f1f0-65f2-43ab-91be-85bd28ef96e5",
-   CellTags->"Info63753635145-2697090"]},
- "Info73753635145-2697090"->{
-  Cell[9620, 249, 838, 13, 93, "Print",ExpressionUUID->"8a13a819-5e25-4dc6-ba96-7edbc14f1aec",
-   CellTags->"Info73753635145-2697090"]}
+ "Info103754052781-9025579"->{
+  Cell[13026, 330, 1084, 17, 70, "Print",ExpressionUUID->"4f9e7e33-af75-452a-8265-b078bb543aeb",
+   CellTags->"Info103754052781-9025579"]},
+ "Info113754052781-9025579"->{
+  Cell[14297, 356, 839, 13, 70, "Print",ExpressionUUID->"b4afd87c-e6e1-4590-ac0b-7f983fe3257e",
+   CellTags->"Info113754052781-9025579"]},
+ "Info253754052803-9025579"->{
+  Cell[19345, 487, 221, 4, 70, "Print",ExpressionUUID->"0a329046-d44f-4524-837d-bb14af1c35c6",
+   CellTags->"Info253754052803-9025579"],
+  Cell[19569, 493, 809, 22, 70, "Print",ExpressionUUID->"a756e9a9-4f59-49cb-a718-d1d8fa70e953",
+   CellTags->"Info253754052803-9025579"]},
+ "Info263754052805-9025579"->{
+  Cell[20582, 527, 263, 5, 70, "Print",ExpressionUUID->"b97e3c62-371c-4424-84f3-3ef4140f4651",
+   CellTags->"Info263754052805-9025579"],
+  Cell[20848, 534, 812, 22, 70, "Print",ExpressionUUID->"4c4c9a27-493e-47bf-8af0-1abb2d3de600",
+   CellTags->"Info263754052805-9025579"]},
+ "Info273754052806-9025579"->{
+  Cell[21873, 568, 286, 5, 70, "Print",ExpressionUUID->"23edb899-de68-4c4c-8019-7316bc40c53d",
+   CellTags->"Info273754052806-9025579"],
+  Cell[22162, 575, 909, 25, 70, "Print",ExpressionUUID->"db63298f-d13e-45f9-88b2-d4e76fab516e",
+   CellTags->"Info273754052806-9025579"]},
+ "Info283754052808-9025579"->{
+  Cell[23286, 612, 247, 4, 70, "Print",ExpressionUUID->"b7ca39f1-074f-4057-8eea-d91792982675",
+   CellTags->"Info283754052808-9025579"],
+  Cell[23536, 618, 915, 25, 70, "Print",ExpressionUUID->"1bd892ed-d2f4-41ad-a052-5cbe8e92955a",
+   CellTags->"Info283754052808-9025579"]},
+ "Info293754052809-9025579"->{
+  Cell[24667, 655, 254, 4, 70, "Print",ExpressionUUID->"c63dff1c-cac2-4eb7-90f5-64fff45d3625",
+   CellTags->"Info293754052809-9025579"],
+  Cell[24924, 661, 898, 25, 70, "Print",ExpressionUUID->"194a468b-fb6b-46da-a342-89624eb8bab5",
+   CellTags->"Info293754052809-9025579"]},
+ "Info303754052813-9025579"->{
+  Cell[27049, 726, 228, 4, 70, "Print",ExpressionUUID->"a244c476-10be-4f6c-af1b-a218592da53d",
+   CellTags->"Info303754052813-9025579"],
+  Cell[27280, 732, 883, 25, 70, "Print",ExpressionUUID->"c3407cb8-8dd7-4031-86a1-d7ea589d2c1a",
+   CellTags->"Info303754052813-9025579"]},
+ "Info33754052773-9025579"->{
+  Cell[6675, 186, 341, 6, 45, "Print",ExpressionUUID->"b56dff64-7882-4f9d-8f79-bbd12ec812aa",
+   CellTags->"Info33754052773-9025579"]},
+ "Info43754052773-9025579"->{
+  Cell[7203, 201, 303, 5, 45, "Print",ExpressionUUID->"bb14f5f3-1be8-40f7-aac5-e0ab60e26915",
+   CellTags->"Info43754052773-9025579"]},
+ "Info53754052780-9025579"->{
+  Cell[7680, 215, 660, 10, 115, "Print",ExpressionUUID->"36328e1d-d218-4ec6-9ec8-f95955e12646",
+   CellTags->"Info53754052780-9025579"]},
+ "Info63754052780-9025579"->{
+  Cell[8513, 234, 834, 12, 115, "Print",ExpressionUUID->"cde5220b-17eb-4e19-8faa-3575f59e7f0e",
+   CellTags->"Info63754052780-9025579"]},
+ "Info73754052780-9025579"->{
+  Cell[9533, 255, 1333, 19, 276, "Print",ExpressionUUID->"dce674f0-389a-4fd5-a531-8d55fde8d6c3",
+   CellTags->"Info73754052780-9025579"]},
+ "Info83754052780-9025579"->{
+  Cell[11040, 283, 1300, 24, 70, "Print",ExpressionUUID->"b19cd7f8-e2a7-4276-a0b3-2718fea92ddf",
+   CellTags->"Info83754052780-9025579"]},
+ "Info93754052780-9025579"->{
+  Cell[12527, 316, 310, 5, 70, "Print",ExpressionUUID->"a64d8cd2-5c80-4583-a97e-97819c10054c",
+   CellTags->"Info93754052780-9025579"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info33753635144-2697090", 36104, 976},
- {"Info43753635145-2697090", 36270, 979},
- {"Info53753635145-2697090", 36436, 982},
- {"Info63753635145-2697090", 36605, 985},
- {"Info73753635145-2697090", 36774, 988}
+ {"Info103754052781-9025579", 48887, 1354},
+ {"Info113754052781-9025579", 49058, 1357},
+ {"Info253754052803-9025579", 49228, 1360},
+ {"Info263754052805-9025579", 49535, 1365},
+ {"Info273754052806-9025579", 49842, 1370},
+ {"Info283754052808-9025579", 50149, 1375},
+ {"Info293754052809-9025579", 50456, 1380},
+ {"Info303754052813-9025579", 50763, 1385},
+ {"Info33754052773-9025579", 51069, 1390},
+ {"Info43754052773-9025579", 51235, 1393},
+ {"Info53754052780-9025579", 51401, 1396},
+ {"Info63754052780-9025579", 51569, 1399},
+ {"Info73754052780-9025579", 51737, 1402},
+ {"Info83754052780-9025579", 51906, 1405},
+ {"Info93754052780-9025579", 52075, 1408}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 112, 0, 107, "Title",ExpressionUUID->"e4d2f57c-9f4a-4103-b307-2de69e67cdfc"],
-Cell[695, 24, 109, 0, 39, "Text",ExpressionUUID->"6d9274dc-5ef3-4975-9399-1a307962b46d"],
-Cell[807, 26, 131, 2, 32, "Input",ExpressionUUID->"4b8f8273-dbb8-45e4-8e7f-cb11dafae3bb"],
+Cell[580, 22, 112, 0, 96, "Title",ExpressionUUID->"e4d2f57c-9f4a-4103-b307-2de69e67cdfc"],
+Cell[695, 24, 109, 0, 34, "Text",ExpressionUUID->"6d9274dc-5ef3-4975-9399-1a307962b46d"],
+Cell[807, 26, 130, 2, 28, "Input",ExpressionUUID->"4b8f8273-dbb8-45e4-8e7f-cb11dafae3bb"],
 Cell[CellGroupData[{
-Cell[963, 32, 87, 0, 73, "Section",ExpressionUUID->"84bb2b7a-8e2f-404e-9a53-871adc496ba6"],
-Cell[1053, 34, 88, 0, 39, "Text",ExpressionUUID->"5529f67d-2138-4007-bcbf-7060200b4f6a"],
-Cell[1144, 36, 132, 2, 32, "Input",ExpressionUUID->"ee813733-b208-4583-9a7f-90e7c3f8b382"],
-Cell[1279, 40, 144, 2, 39, "Text",ExpressionUUID->"f197fcdf-ba63-46c1-9a4c-0d6049b88f94"],
+Cell[962, 32, 87, 0, 67, "Section",ExpressionUUID->"84bb2b7a-8e2f-404e-9a53-871adc496ba6"],
+Cell[1052, 34, 88, 0, 34, "Text",ExpressionUUID->"5529f67d-2138-4007-bcbf-7060200b4f6a"],
+Cell[1143, 36, 132, 2, 28, "Input",ExpressionUUID->"ee813733-b208-4583-9a7f-90e7c3f8b382"],
+Cell[1278, 40, 144, 2, 34, "Text",ExpressionUUID->"f197fcdf-ba63-46c1-9a4c-0d6049b88f94"],
 Cell[CellGroupData[{
-Cell[1448, 46, 132, 2, 32, "Input",ExpressionUUID->"4e9dded5-971d-4129-894a-332b9d2a89b7"],
-Cell[1583, 50, 4121, 108, 86, "Print",ExpressionUUID->"2e9c8a00-628d-425a-a423-c205a6f3f50c"]
+Cell[1447, 46, 132, 2, 28, "Input",ExpressionUUID->"4e9dded5-971d-4129-894a-332b9d2a89b7"],
+Cell[1582, 50, 4923, 127, 80, "Print",ExpressionUUID->"3a42fa6f-dc22-4f86-a9d5-b0798f1735ac"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5741, 163, 147, 2, 32, "Input",ExpressionUUID->"e54f835e-0032-409b-a34d-201cb66e3845"],
-Cell[5891, 167, 206, 4, 48, "Print",ExpressionUUID->"b3c05b20-d9c5-45a8-8d70-0712a92d140f",
- CellTags->"Info33753635144-2697090"]
+Cell[6542, 182, 130, 2, 28, "Input",ExpressionUUID->"2f3e088b-7072-4641-b5c3-42130f1d368e"],
+Cell[6675, 186, 341, 6, 45, "Print",ExpressionUUID->"b56dff64-7882-4f9d-8f79-bbd12ec812aa",
+ CellTags->"Info33754052773-9025579"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6134, 176, 134, 2, 32, "Input",ExpressionUUID->"134638b7-6ed5-449b-8922-14f718b7488f"],
-Cell[6271, 180, 352, 6, 73, "Print",ExpressionUUID->"0e63b2ef-c061-43e7-a08d-919ed06f7172",
- CellTags->"Info43753635145-2697090"]
+Cell[7053, 197, 147, 2, 28, "Input",ExpressionUUID->"e54f835e-0032-409b-a34d-201cb66e3845"],
+Cell[7203, 201, 303, 5, 45, "Print",ExpressionUUID->"bb14f5f3-1be8-40f7-aac5-e0ab60e26915",
+ CellTags->"Info43754052773-9025579"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6660, 191, 146, 2, 32, "Input",ExpressionUUID->"aa307995-0b2f-4665-b1c9-a17d8159747b"],
-Cell[6809, 195, 1354, 19, 289, "Print",ExpressionUUID->"d159df38-5e1d-409f-b274-a9326d3ae129",
- CellTags->"Info53753635145-2697090"]
+Cell[7543, 211, 134, 2, 28, "Input",ExpressionUUID->"134638b7-6ed5-449b-8922-14f718b7488f"],
+Cell[7680, 215, 660, 10, 115, "Print",ExpressionUUID->"36328e1d-d218-4ec6-9ec8-f95955e12646",
+ CellTags->"Info53754052780-9025579"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8200, 219, 148, 2, 32, "Input",ExpressionUUID->"b78821d2-3d5b-4c15-b055-631eeb86373d"],
-Cell[8351, 223, 1083, 17, 265, "Print",ExpressionUUID->"f686f1f0-65f2-43ab-91be-85bd28ef96e5",
- CellTags->"Info63753635145-2697090"]
+Cell[8377, 230, 133, 2, 28, "Input",ExpressionUUID->"32af6be6-5d44-4697-911a-566cf44b410a"],
+Cell[8513, 234, 834, 12, 115, "Print",ExpressionUUID->"cde5220b-17eb-4e19-8faa-3575f59e7f0e",
+ CellTags->"Info63754052780-9025579"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9471, 245, 146, 2, 93, "Input",ExpressionUUID->"eb0cf26e-6d0a-4895-a0dc-6f645bec4d6b"],
-Cell[9620, 249, 838, 13, 93, "Print",ExpressionUUID->"8a13a819-5e25-4dc6-ba96-7edbc14f1aec",
- CellTags->"Info73753635145-2697090"]
+Cell[9384, 251, 146, 2, 28, "Input",ExpressionUUID->"aa307995-0b2f-4665-b1c9-a17d8159747b"],
+Cell[9533, 255, 1333, 19, 276, "Print",ExpressionUUID->"dce674f0-389a-4fd5-a531-8d55fde8d6c3",
+ CellTags->"Info73754052780-9025579"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10903, 279, 134, 2, 70, "Input",ExpressionUUID->"97932d40-7d5f-40a5-a022-6d8cdfa6227b"],
+Cell[11040, 283, 1300, 24, 70, "Print",ExpressionUUID->"b19cd7f8-e2a7-4276-a0b3-2718fea92ddf",
+ CellTags->"Info83754052780-9025579"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12377, 312, 147, 2, 70, "Input",ExpressionUUID->"5cb99c70-3a6c-4065-b6fb-55ac13994eda"],
+Cell[12527, 316, 310, 5, 70, "Print",ExpressionUUID->"a64d8cd2-5c80-4583-a97e-97819c10054c",
+ CellTags->"Info93754052780-9025579"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12874, 326, 149, 2, 70, "Input",ExpressionUUID->"b78821d2-3d5b-4c15-b055-631eeb86373d"],
+Cell[13026, 330, 1084, 17, 70, "Print",ExpressionUUID->"4f9e7e33-af75-452a-8265-b078bb543aeb",
+ CellTags->"Info103754052781-9025579"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14147, 352, 147, 2, 70, "Input",ExpressionUUID->"eb0cf26e-6d0a-4895-a0dc-6f645bec4d6b"],
+Cell[14297, 356, 839, 13, 70, "Print",ExpressionUUID->"b4afd87c-e6e1-4590-ac0b-7f983fe3257e",
+ CellTags->"Info113754052781-9025579"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10507, 268, 88, 0, 93, "Section",ExpressionUUID->"83566231-52da-4acd-b067-ccc96937ddb4"],
-Cell[10598, 270, 156, 2, 93, "Text",ExpressionUUID->"3c0fa1fa-a90f-4098-b6d2-098b47467114"],
-Cell[10757, 274, 234, 5, 93, "Input",ExpressionUUID->"3bbe7657-5117-4e82-b831-b6fd3795a647"],
+Cell[15185, 375, 88, 0, 70, "Section",ExpressionUUID->"83566231-52da-4acd-b067-ccc96937ddb4"],
+Cell[15276, 377, 156, 2, 70, "Text",ExpressionUUID->"3c0fa1fa-a90f-4098-b6d2-098b47467114"],
+Cell[15435, 381, 234, 5, 70, "Input",ExpressionUUID->"3bbe7657-5117-4e82-b831-b6fd3795a647"],
 Cell[CellGroupData[{
-Cell[11016, 283, 119, 0, 93, "Subsection",ExpressionUUID->"493d6b84-dda7-45ef-9536-434e63971f3c"],
-Cell[11138, 285, 579, 11, 93, "Text",ExpressionUUID->"a3516260-0a47-4225-b37c-d7a422abbc4f"],
-Cell[11720, 298, 2755, 72, 93, "Input",ExpressionUUID->"3c9be9be-a677-4eab-a35d-a26a771221ae"],
-Cell[14478, 372, 116, 0, 93, "Text",ExpressionUUID->"359ac7eb-5f82-411b-afb6-d77365077e02"],
-Cell[14597, 374, 900, 24, 93, "Input",ExpressionUUID->"1899b80a-d13e-4022-9160-2a8b7f69d219"]
-}, Open  ]],
+Cell[15694, 390, 119, 0, 70, "Subsection",ExpressionUUID->"493d6b84-dda7-45ef-9536-434e63971f3c"],
+Cell[15816, 392, 583, 11, 70, "Text",ExpressionUUID->"0a6c6cdf-9ac4-4e38-921d-8f13d69a6b17"],
+Cell[16402, 405, 2755, 72, 70, "Input",ExpressionUUID->"3c9be9be-a677-4eab-a35d-a26a771221ae"],
 Cell[CellGroupData[{
-Cell[15534, 403, 93, 0, 93, "Subsection",ExpressionUUID->"1f019fed-600e-4e02-972e-46312d26efca"],
-Cell[15630, 405, 216, 3, 93, "Text",ExpressionUUID->"b0daa49f-8314-4d89-9739-1e65b93c2b58"],
+Cell[19182, 481, 138, 2, 70, "Input",ExpressionUUID->"29332f78-bbfd-4576-b0d4-b0c85d576ae8"],
 Cell[CellGroupData[{
-Cell[15871, 412, 587, 14, 93, "Input",ExpressionUUID->"5e3360bb-f913-4b23-93ea-29ff8d426938"],
-Cell[16461, 428, 191, 4, 93, "Print",ExpressionUUID->"81eefebe-15d5-4722-a189-14ea8d6c3146"],
-Cell[16655, 434, 446, 12, 93, "Output",ExpressionUUID->"bb4fc6db-95b0-4e05-8df7-677b73d5220f"]
-}, Open  ]],
-Cell[17116, 449, 96, 0, 93, "Text",ExpressionUUID->"948e54b6-fe7f-4d4c-9a1f-90e27269852f"],
-Cell[CellGroupData[{
-Cell[17237, 453, 150, 2, 93, "Input",ExpressionUUID->"da320f56-80a7-41ed-87d3-25e3f029c609"],
-Cell[17390, 457, 512, 14, 93, "Output",ExpressionUUID->"4ef8dcd8-99ce-405a-983d-efa4d11d2887"]
-}, Open  ]],
-Cell[17917, 474, 218, 3, 93, "Text",ExpressionUUID->"696028dd-1bd5-452c-b5e7-8bbb5ac647d2"],
-Cell[CellGroupData[{
-Cell[18160, 481, 760, 19, 93, "Input",ExpressionUUID->"531728c8-de36-4631-95e1-9a3c8ae22522"],
-Cell[CellGroupData[{
-Cell[18945, 504, 191, 4, 93, "Print",ExpressionUUID->"fb6c9c62-aa99-4eed-b3a8-a97059d87b49"],
-Cell[19139, 510, 191, 4, 93, "Print",ExpressionUUID->"5db76a43-92f0-47e5-b91c-b26b6be5fe2a"],
-Cell[19333, 516, 191, 4, 93, "Print",ExpressionUUID->"e90d3e72-ce71-42e6-b927-c0ef50ca386f"],
-Cell[19527, 522, 191, 4, 93, "Print",ExpressionUUID->"2e9ffb86-d5f9-49c4-a42b-38299a07eb61"]
-}, Open  ]],
-Cell[19733, 529, 730, 20, 93, "Output",ExpressionUUID->"618687ef-aebb-4727-b7f0-c3dccd53120c"]
-}, Open  ]],
-Cell[20478, 552, 96, 0, 93, "Text",ExpressionUUID->"46e6c187-901d-40b9-97e5-2bdcdbcd90ba"],
-Cell[CellGroupData[{
-Cell[20599, 556, 150, 2, 93, "Input",ExpressionUUID->"3c6d46ca-a8d6-4f2e-8f18-9e05b4a48fb6"],
-Cell[20752, 560, 862, 24, 93, "Output",ExpressionUUID->"1d90bfe3-c0b2-45de-a0bf-bea38254b79f"]
+Cell[19345, 487, 221, 4, 70, "Print",ExpressionUUID->"0a329046-d44f-4524-837d-bb14af1c35c6",
+ CellTags->"Info253754052803-9025579"],
+Cell[19569, 493, 809, 22, 70, "Print",ExpressionUUID->"a756e9a9-4f59-49cb-a718-d1d8fa70e953",
+ CellTags->"Info253754052803-9025579"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21663, 590, 90, 0, 93, "Subsection",ExpressionUUID->"cdab401b-8db9-450d-bbc0-3d73b28664c0"],
-Cell[21756, 592, 193, 3, 93, "Text",ExpressionUUID->"de6b4373-7b11-4c80-92b6-5be2e31ba878"],
-Cell[21952, 597, 1589, 38, 93, "Input",ExpressionUUID->"deb05da8-10d3-47d5-bfcb-e837109e3532"],
-Cell[23544, 637, 1611, 38, 93, "Input",ExpressionUUID->"f502f728-0d0c-4805-b3ee-b12779251f73"]
-}, Open  ]],
+Cell[20427, 521, 130, 2, 70, "Input",ExpressionUUID->"aacc1b6e-caee-4c75-b989-e167ce879eca"],
 Cell[CellGroupData[{
-Cell[25192, 680, 93, 0, 93, "Subsection",ExpressionUUID->"77b1efb2-1288-4f38-af58-42b154cdd2bd"],
-Cell[25288, 682, 1370, 29, 93, "Input",ExpressionUUID->"631af003-776f-4be8-99e0-3d0234b82d11"],
-Cell[26661, 713, 1164, 23, 93, "Text",ExpressionUUID->"d17fc67a-4fc1-4726-b68a-b7abff1cfaed"],
-Cell[CellGroupData[{
-Cell[27850, 740, 1519, 35, 93, "Input",ExpressionUUID->"3806fd16-121c-47e1-9ade-f6ddcf2d9886"],
-Cell[29372, 777, 188, 4, 93, "Print",ExpressionUUID->"f7714807-e54b-452f-a40b-9642d5c209ab"],
-Cell[29563, 783, 731, 20, 93, "Output",ExpressionUUID->"d72b090c-c4ab-4bb6-a8a1-60c632299b4d"]
+Cell[20582, 527, 263, 5, 70, "Print",ExpressionUUID->"b97e3c62-371c-4424-84f3-3ef4140f4651",
+ CellTags->"Info263754052805-9025579"],
+Cell[20848, 534, 812, 22, 70, "Print",ExpressionUUID->"4c4c9a27-493e-47bf-8af0-1abb2d3de600",
+ CellTags->"Info263754052805-9025579"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30343, 809, 91, 0, 93, "Subsection",ExpressionUUID->"a5a77ffa-4b11-406b-9636-c04e46ad04e5"],
-Cell[30437, 811, 107, 0, 93, "Text",ExpressionUUID->"66a5e1f0-3a3a-4c05-b828-32e0cf508d46"],
+Cell[21709, 562, 139, 2, 70, "Input",ExpressionUUID->"9513e400-613a-4bb2-8d6e-14efb05a2bd6"],
 Cell[CellGroupData[{
-Cell[30569, 815, 145, 2, 93, "Input",ExpressionUUID->"648d5d75-b467-41b4-b4a4-88419667910a"],
-Cell[30717, 819, 434, 12, 93, "Output",ExpressionUUID->"3ee9401b-83e8-4a99-95e9-25f599906f56"]
+Cell[21873, 568, 286, 5, 70, "Print",ExpressionUUID->"23edb899-de68-4c4c-8019-7316bc40c53d",
+ CellTags->"Info273754052806-9025579"],
+Cell[22162, 575, 909, 25, 70, "Print",ExpressionUUID->"db63298f-d13e-45f9-88b2-d4e76fab516e",
+ CellTags->"Info273754052806-9025579"]
+}, Open  ]]
 }, Open  ]],
-Cell[31166, 834, 124, 0, 93, "Text",ExpressionUUID->"362b1c46-0885-4566-b90c-b08c5dd95241"],
 Cell[CellGroupData[{
-Cell[31315, 838, 1307, 36, 93, "Input",ExpressionUUID->"d4216e26-d570-4794-92e7-a5165cf3521a"],
-Cell[32625, 876, 1348, 33, 93, "Output",ExpressionUUID->"848374a8-113f-4976-b073-ce06e67236e6"]
+Cell[23120, 606, 141, 2, 70, "Input",ExpressionUUID->"3179f71f-d517-4167-86e0-7db45c56157c"],
+Cell[CellGroupData[{
+Cell[23286, 612, 247, 4, 70, "Print",ExpressionUUID->"b7ca39f1-074f-4057-8eea-d91792982675",
+ CellTags->"Info283754052808-9025579"],
+Cell[23536, 618, 915, 25, 70, "Print",ExpressionUUID->"1bd892ed-d2f4-41ad-a052-5cbe8e92955a",
+ CellTags->"Info283754052808-9025579"]
+}, Open  ]]
 }, Open  ]],
-Cell[33988, 912, 158, 2, 93, "Input",ExpressionUUID->"a78e9c05-78cf-452b-b5db-1ffe4a874e08"],
-Cell[34149, 916, 93, 0, 93, "Text",ExpressionUUID->"064d28fe-6a0b-4474-a701-68f6ae4b8bc1"],
 Cell[CellGroupData[{
-Cell[34267, 920, 139, 2, 93, "Input",ExpressionUUID->"8ecb67c7-34b4-4434-8e2e-63be77c42ebb"],
-Cell[34409, 924, 1187, 32, 93, "Output",ExpressionUUID->"4cfd489e-f9be-457b-90b0-d8adb727b8db"]
+Cell[24500, 649, 142, 2, 70, "Input",ExpressionUUID->"83b87ce9-a211-4a0a-bacd-914561abee02"],
+Cell[CellGroupData[{
+Cell[24667, 655, 254, 4, 70, "Print",ExpressionUUID->"c63dff1c-cac2-4eb7-90f5-64fff45d3625",
+ CellTags->"Info293754052809-9025579"],
+Cell[24924, 661, 898, 25, 70, "Print",ExpressionUUID->"194a468b-fb6b-46da-a342-89624eb8bab5",
+ CellTags->"Info293754052809-9025579"]
+}, Open  ]]
+}, Open  ]],
+Cell[25849, 690, 116, 0, 70, "Text",ExpressionUUID->"359ac7eb-5f82-411b-afb6-d77365077e02"],
+Cell[25968, 692, 900, 24, 70, "Input",ExpressionUUID->"1899b80a-d13e-4022-9160-2a8b7f69d219"],
+Cell[CellGroupData[{
+Cell[26893, 720, 131, 2, 70, "Input",ExpressionUUID->"ae96e708-3fef-411c-a77e-b169e4fdb1eb"],
+Cell[CellGroupData[{
+Cell[27049, 726, 228, 4, 70, "Print",ExpressionUUID->"a244c476-10be-4f6c-af1b-a218592da53d",
+ CellTags->"Info303754052813-9025579"],
+Cell[27280, 732, 883, 25, 70, "Print",ExpressionUUID->"c3407cb8-8dd7-4031-86a1-d7ea589d2c1a",
+ CellTags->"Info303754052813-9025579"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28224, 764, 93, 0, 70, "Subsection",ExpressionUUID->"1f019fed-600e-4e02-972e-46312d26efca"],
+Cell[28320, 766, 216, 3, 70, "Text",ExpressionUUID->"b0daa49f-8314-4d89-9739-1e65b93c2b58"],
+Cell[CellGroupData[{
+Cell[28561, 773, 460, 11, 70, "Input",ExpressionUUID->"5e3360bb-f913-4b23-93ea-29ff8d426938"],
+Cell[29024, 786, 191, 4, 70, "Print",ExpressionUUID->"5d875724-be6c-4d86-9ee6-0db12072555d"],
+Cell[29218, 792, 446, 12, 70, "Output",ExpressionUUID->"60875a9c-81bc-4cbc-9fda-cc85c8461bf7"]
+}, Open  ]],
+Cell[29679, 807, 96, 0, 70, "Text",ExpressionUUID->"948e54b6-fe7f-4d4c-9a1f-90e27269852f"],
+Cell[CellGroupData[{
+Cell[29800, 811, 150, 2, 70, "Input",ExpressionUUID->"da320f56-80a7-41ed-87d3-25e3f029c609"],
+Cell[29953, 815, 512, 14, 70, "Output",ExpressionUUID->"ab4f064c-f040-47fa-971f-04e115873382"]
+}, Open  ]],
+Cell[30480, 832, 218, 3, 70, "Text",ExpressionUUID->"696028dd-1bd5-452c-b5e7-8bbb5ac647d2"],
+Cell[CellGroupData[{
+Cell[30723, 839, 620, 15, 70, "Input",ExpressionUUID->"531728c8-de36-4631-95e1-9a3c8ae22522"],
+Cell[CellGroupData[{
+Cell[31368, 858, 191, 4, 70, "Print",ExpressionUUID->"da0351ac-8330-44fb-8891-077ba3fb5faa"],
+Cell[31562, 864, 191, 4, 70, "Print",ExpressionUUID->"f5e18d86-d86f-436a-b0c3-95bd6a291a6e"],
+Cell[31756, 870, 191, 4, 70, "Print",ExpressionUUID->"bdebbba9-d3c2-40db-a331-809efc050c24"],
+Cell[31950, 876, 191, 4, 70, "Print",ExpressionUUID->"b2a43459-2245-490e-b57d-5c20c62c78fd"]
+}, Open  ]],
+Cell[32156, 883, 730, 20, 70, "Output",ExpressionUUID->"7040eb7e-2a22-425e-ba06-e4ee538e83f4"]
+}, Open  ]],
+Cell[32901, 906, 96, 0, 70, "Text",ExpressionUUID->"46e6c187-901d-40b9-97e5-2bdcdbcd90ba"],
+Cell[CellGroupData[{
+Cell[33022, 910, 150, 2, 70, "Input",ExpressionUUID->"3c6d46ca-a8d6-4f2e-8f18-9e05b4a48fb6"],
+Cell[33175, 914, 862, 24, 70, "Output",ExpressionUUID->"ee8fd0b8-48fd-49a1-a349-4d3db4847604"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34086, 944, 90, 0, 70, "Subsection",ExpressionUUID->"cdab401b-8db9-450d-bbc0-3d73b28664c0"],
+Cell[34179, 946, 244, 4, 70, "Text",ExpressionUUID->"de6b4373-7b11-4c80-92b6-5be2e31ba878"],
+Cell[34426, 952, 1392, 35, 70, "Input",ExpressionUUID->"deb05da8-10d3-47d5-bfcb-e837109e3532"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35855, 992, 93, 0, 70, "Subsection",ExpressionUUID->"77b1efb2-1288-4f38-af58-42b154cdd2bd"],
+Cell[35951, 994, 1370, 29, 70, "Input",ExpressionUUID->"631af003-776f-4be8-99e0-3d0234b82d11"],
+Cell[37324, 1025, 292, 4, 70, "Text",ExpressionUUID->"67f4e3e4-52f1-4026-a74e-2c090ad386d7"],
+Cell[CellGroupData[{
+Cell[37641, 1033, 577, 14, 70, "Input",ExpressionUUID->"d5eddf29-e9aa-4def-907a-a92d36071cb6"],
+Cell[38221, 1049, 191, 4, 70, "Print",ExpressionUUID->"9a85f7aa-73e7-472e-9808-fc36dd547118"],
+Cell[38415, 1055, 446, 12, 70, "Output",ExpressionUUID->"070346ba-0427-43d5-8758-ea75715ca70d"]
+}, Open  ]],
+Cell[38876, 1070, 96, 0, 70, "Text",ExpressionUUID->"ac23edcb-1661-4944-bf0a-89cde4338a61"],
+Cell[CellGroupData[{
+Cell[38997, 1074, 150, 2, 70, "Input",ExpressionUUID->"84692ac3-d9d7-4fb8-8ee4-83832f6deb69"],
+Cell[39150, 1078, 512, 14, 70, "Output",ExpressionUUID->"b94b8601-4c6f-4f9d-94fa-8baa75f0c5a5"]
+}, Open  ]],
+Cell[39677, 1095, 1164, 23, 70, "Text",ExpressionUUID->"d17fc67a-4fc1-4726-b68a-b7abff1cfaed"],
+Cell[CellGroupData[{
+Cell[40866, 1122, 1325, 32, 70, "Input",ExpressionUUID->"3806fd16-121c-47e1-9ade-f6ddcf2d9886"],
+Cell[42194, 1156, 188, 4, 70, "Print",ExpressionUUID->"78f79d19-2d36-4f3c-91f0-dc1db9e53705"],
+Cell[42385, 1162, 733, 20, 70, "Output",ExpressionUUID->"1467ec48-29e2-4e59-a89e-ead485018ff8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43167, 1188, 91, 0, 70, "Subsection",ExpressionUUID->"a5a77ffa-4b11-406b-9636-c04e46ad04e5"],
+Cell[43261, 1190, 107, 0, 70, "Text",ExpressionUUID->"66a5e1f0-3a3a-4c05-b828-32e0cf508d46"],
+Cell[CellGroupData[{
+Cell[43393, 1194, 145, 2, 70, "Input",ExpressionUUID->"648d5d75-b467-41b4-b4a4-88419667910a"],
+Cell[43541, 1198, 434, 12, 70, "Output",ExpressionUUID->"5f277629-8771-460e-bdce-d21aa47b136d"]
+}, Open  ]],
+Cell[43990, 1213, 124, 0, 70, "Text",ExpressionUUID->"362b1c46-0885-4566-b90c-b08c5dd95241"],
+Cell[CellGroupData[{
+Cell[44139, 1217, 1307, 36, 70, "Input",ExpressionUUID->"d4216e26-d570-4794-92e7-a5165cf3521a"],
+Cell[45449, 1255, 1338, 33, 70, "Output",ExpressionUUID->"309dd8f0-abe9-4ced-8583-ffd99fda3455"]
+}, Open  ]],
+Cell[46802, 1291, 158, 2, 70, "Input",ExpressionUUID->"a78e9c05-78cf-452b-b5db-1ffe4a874e08"],
+Cell[46963, 1295, 93, 0, 70, "Text",ExpressionUUID->"064d28fe-6a0b-4474-a701-68f6ae4b8bc1"],
+Cell[CellGroupData[{
+Cell[47081, 1299, 139, 2, 70, "Input",ExpressionUUID->"8ecb67c7-34b4-4434-8e2e-63be77c42ebb"],
+Cell[47223, 1303, 1189, 32, 70, "Output",ExpressionUUID->"4d0e38c9-e0d6-4c8d-bbe1-020bab8739c1"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

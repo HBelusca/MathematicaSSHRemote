@@ -1,11 +1,12 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*SSHRemote package v1.9*)
+(*SSHRemote package v2.0a*)
 
 
 (* ::Subtitle:: *)
 (*A Mathematica package that implements remote kernels launch through tunnelled SSH connections.*)
+(*It interfaces with the standard Mathematica LaunchKernels[RemoteMachine[...]] functionality by overloading the SubKernels`RemoteKernels package.*)
 
 
 (* ::Subsubtitle:: *)
@@ -28,7 +29,10 @@
 (*  that was mentioned in the following discussion: https://mathematica.stackexchange.com/questions/28274/remote-kernel-error-mleconnect .*)
 
 
-BeginPackage["SSHRemote`", {"SubKernels`LinkKernels`","SubKernels`RemoteKernels`"}]
+BeginPackage["SSHRemote`", {(*"SubKernels`LinkKernels`",*)"SubKernels`RemoteKernels`"}]
+
+
+Unprotect[LaunchRemote, RemoteMachine];
 
 
 (* ::Subsection:: *)
@@ -51,12 +55,40 @@ If[$VersionNumber<10.1,
 ]
 
 
+(* ::Subsection:: *)
+(*Patching FilterRules[]*)
+
+
+(* ::Text:: *)
+(*FilterRules[] is patched because it does not behave well when the pattern is Except[c,p].*)
+
+
+Begin["`Private`"]
+
+getRuleLHS[rule:(_Rule|_RuleDelayed)]:=First[rule];
+getRuleLHS[expr_String]:=Symbol[expr];
+getRuleLHS[expr_]:=expr;
+
+(*
+Unprotect[FilterRules];
+FilterRules[rule:(_Rule|_RuleDelayed), patt_] := FilterRules[{rule},patt];
+FilterRules[rules:{(_Rule|_RuleDelayed)..}, Except[cPatt_List,patt_List]] := Select[rules, MatchQ[getRuleLHS@#, Except[Alternatives@@getRuleLHS/@cPatt,Alternatives@@getRuleLHS/@patt]]&];
+FilterRules[rules:{(_Rule|_RuleDelayed)..}, Except[cPatt_List,patt_]] := Select[rules, MatchQ[getRuleLHS@#, Except[Alternatives@@getRuleLHS/@cPatt,getRuleLHS@patt]]&];
+FilterRules[rules:{(_Rule|_RuleDelayed)..}, Except[cPatt_,patt_List]] := Select[rules, MatchQ[getRuleLHS@#, Except[getRuleLHS@cPatt,Alternatives@@getRuleLHS/@patt]]&];
+FilterRules[rules:{(_Rule|_RuleDelayed)..}, Except[cPatt_,patt_]] := Select[rules, MatchQ[getRuleLHS@#, Except[getRuleLHS@cPatt,getRuleLHS@patt]]&];
+Protect[FilterRules];
+*)
+End[]
+
+
 (* ::Subsection::Closed:: *)
 (*Error handling, error messages*)
 
 
 General::npos=General::estep; (* "Value of option `1` -> `2` is not a positive integer." *)
 
+
+Begin["`Private`"];
 
 ValidateCondition::usage=
 "ValidateCondition[condition_, errorMsgStr_String, opts___, failAction_:Abort[]]
@@ -71,8 +103,6 @@ ValidateOption[optValue_, optName_Symbol, optPossibleValues_, errorMsgName_Messa
 
 Verifies that the provided value 'optValue' matches one of the possible values 'optPossibleValues' for the option 'optName', and if not, displays an error message and aborts the computation or perform a user-specific failure action.
 The error message is specified via either a message name or a control string.";
-
-Begin["`Private`"];
 
 SetAttributes[ValidateCondition, HoldAll]; (* 'HoldAll' attribute must be acquired first for the 'failAction' specification to be correctly set *)
 
@@ -98,7 +128,10 @@ End[]; (* "`Private`" *)
 
 
 (* ::Subsection:: *)
-(*Implementation*)
+(*Symbols descriptions*)
+
+
+SSHRemote`SSHRemote::usage="SSHRemote is a symbol that is used in the overloaded definitions of RemoteMachine[] and LaunchRemote[] to specify that the functionalities of the SSHRemote` package have to be used instead.";
 
 
 Off[General::shdw]; (* Switch off shadowing warnings for Verbose, Asynchronous and OperatingSystem *)
@@ -142,9 +175,82 @@ The default value is given by the value of $OperatingSystem.";
 On[General::shdw]; (* Restore shadowing warnings *)
 
 
-SshRemoteMachine::usage = "SshRemoteMachine[..] is an extension of RemoteMachine[..].";
-sshRemoteKernelObject::usage = "sshRemoteKernelObject[method] is an extension of remoteKernelObject[method]."
-sshRemoteKernel::usage = "sshRemoteKernel[..] is an extension of remoteKernel[..]."
+SshRemoteMachine::usage="SshRemoteMachine[host, username, (template), (n), opts...] is a shortcut notation for RemoteMachine[host, SSHRemote, username, (template), (n), opts...].";
+
+
+SshLaunchKernels::usage="SshLaunchKernels[host, username, (template), (n), opts...] is a shortcut notation for LaunchKernels[SshRemoteMachine[host, username, (template), (n), opts...]].";
+
+
+RemoteMachine::usage = StringJoin[RemoteMachine::usage,"\n",
+"RemoteMachine[host, username, (template), (n), opts...] also supports for an explicit user-name specification, whose default value is $RemoteUserName.
+RemoteMachine[host, SSHRemote, username, (template), (n), opts...] specifies that the functionalities of the SSHRemote` package have to be used."
+];
+
+
+LaunchRemote::usage = StringJoin[LaunchRemote::usage,"\n",
+"LaunchRemote[host, username, template, opts..] also supports for an explicit user-name specification, whose default value is $RemoteUserName.
+LaunchRemote[host, SSHRemote, username, template, opts..] specifies that the functionalities of the SSHRemote` package have to be used."
+];
+
+
+SSHRemote`$SshSocketsPath::usage="$SshSocketsPath defines the platform-and-user-specific SSH sockets path.";
+SSHRemote`$SshCmd::usage="$SshCmd defines the standard SSH connection command that is used for starting remote kernels. See also $mathCmd.";
+SSHRemote`$SshCmdMultiplex::usage="$SshCmdMultiplex defines the SSH connection command that is used for starting remote kernels when SSH multiplexed connections are used.";
+SSHRemote`$SshMultiplexStart::usage="$SshMultiplexStart defines the SSH command that is used to start a new SSH multiplexed connection.";
+SSHRemote`$SshMultiplexCtlCmd::usage="$SshMultiplexCtlCmd defines the SSH command that is used to control existing SSH multiplexed connections.";
+
+
+SSHRemote`$mathCmd::usage="$mathCmd is the remote Mathematica kernel launch command. See also $mathkernel.";
+
+
+(* ::Subsection:: *)
+(*Constants*)
+
+
+(* ::Text:: *)
+(*SSH sockets path (platform-specific).*)
+
+
+$SshSocketsPath="~/.ssh/sockets/";
+
+
+(* ::Text:: *)
+(*SSH commands. See https://linux.die.net/man/1/ssh for more details.*)
+(*The options (not all are recognized by SSH clients) are:*)
+(*-f start as background process.*)
+(*-C enable compression.*)
+(*-v verbose mode.*)
+(*-x disable X11 forwarding.*)
+(*-n prevent reading from stdin.*)
+(*-T disable pseudo-tty allocation.*)
+(*-A enable SSH agent forwarding.*)
+
+
+$SshCmd="ssh `3`@`1` -C "<>(*"-v "<>*)"-x -n -T -A `ports`"(*<>" -o CheckHostIP=no -o StrictHostKeyChecking=no -o ControlMaster=no"*);
+
+(* SSH Multiplexed connections support -- See https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing for more details *)
+$SshCmdMultiplex="ssh `3`@`1` -f -C "<>(*"-v "<>*)"-x -n -T -A -o ControlMaster=no -o ControlPath="<>$SshSocketsPath<>"ssh-%r@%h:%p";
+
+(* Start the multiplexed connection *)
+$SshMultiplexStart="ssh `3`@`1` -fN -C "<>(*"-v "<>*)"-x -n -T -A -o ControlMaster=yes -o ControlPath="<>$SshSocketsPath<>"ssh-%r@%h:%p";
+
+(* Multiplex control commands -- For stopping the multiplexed connection we use ctlcmd \[Equal] stop ; alternatively one can use "-O exit" to kill all the connections. *)
+$SshMultiplexCtlCmd="ssh `3`@`1` -O `ctlcmd` `params` -o ControlPath="<>$SshSocketsPath<>"ssh-%r@%h:%p";
+
+
+(* ::Text:: *)
+(*Remote Mathematica kernel launch command (see also $mathkernel).*)
+
+
+$mathCmd="\"MathKernel -wstp "<>(*"-mathlink "<>*)"-lmverbose -LinkMode Connect `4` -LinkName `2`"<>(*" -LinkHost `ipaddress`"<>*)" -subkernel" (*  -noinit -remotelaunch -nopaclet  2>&1 & *)(*<>" >& /dev/null &"*)(*<>"&; exit"*)<>"\"";
+
+
+(* ::Subsection:: *)
+(*Implementation*)
+
+
+(* Protected/locked symbol to be used to distinguish the overloaded definitions of RemoteMachine[] and LaunchRemote[] and their original definitions. *)
+SetAttributes[SSHRemote,{Protected,Locked}];
 
 
 Begin["`Private`"]
@@ -166,31 +272,29 @@ SubKernels`Protected`firstOrFailed[l_List] := First[l, $Failed];
 
 
 (* description language methods *)
-SshRemoteMachine/: SubKernels`KernelCount[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, opts:OptionsPattern[]]] := n
+RemoteMachine /: SubKernels`KernelCount[RemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, opts:OptionsPattern[]]] := n;
+RemoteMachine /: SubKernels`KernelCount[RemoteMachine[host_, SSHRemote, username_String:"", cmd_String:"", n_Integer:1, opts:OptionsPattern[]]] := n;
 
 (* format of description items *)
-Format[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n==1] :=
-	StringForm["\[LeftSkeleton]a kernel on `1`\[RightSkeleton]", host]
-Format[SshRemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n>1] :=
-	StringForm["\[LeftSkeleton]`1` kernels on `2`\[RightSkeleton]", n, host]
-
-(* factory method *)
-SshRemoteMachine/: SubKernels`NewKernels[SshRemoteMachine[args___], opts:OptionsPattern[]] := SshLaunchRemote[args, opts]
-
-
-SetAttributes[sshRemoteKernel, HoldAll]; (* data type *)
-
-(* interface methods *)
-DownValues[sshRemoteKernel]=(DownValues[remoteKernel]/.remoteKernel->sshRemoteKernel);
-UpValues[sshRemoteKernel]=(UpValues[remoteKernel]/.remoteKernel->sshRemoteKernel);
-sshRemoteKernel/: SubKernels`Description[kernel_sshRemoteKernel] := SshRemoteMachine@@SubKernels`RemoteKernels`Private`arglist[kernel];
-sshRemoteKernel/: SubKernels`SubKernelType[kernel_sshRemoteKernel] := sshRemoteKernelObject;
+Format[RemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n==1] :=
+	StringForm["\[LeftSkeleton]a kernel on `1`\[RightSkeleton]", host];
+Format[RemoteMachine[host_, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n>1] :=
+	StringForm["\[LeftSkeleton]`1` kernels on `2`\[RightSkeleton]", n, host];
+Format[RemoteMachine[host_, SSHRemote, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n==1] :=
+	StringForm["\[LeftSkeleton]a kernel on `1`\[RightSkeleton]", host];
+Format[RemoteMachine[host_, SSHRemote, username_String:"", cmd_String:"", n_Integer:1, OptionsPattern[]]/;n>1] :=
+	StringForm["\[LeftSkeleton]`1` kernels on `2`\[RightSkeleton]", n, host];
 
 
-sshRemoteKernelObject[subKernels] := SubKernels`RemoteKernels`Private`$openkernels;
+(* Shortcut helpers *)
+SshRemoteMachine[host_, args___]:=RemoteMachine[host, SSHRemote, args];
+SshLaunchKernels[args___]:=LaunchKernels[SshRemoteMachine[args]];
 
 
-(* Standard paths to Java and MathSSH *)
+(* ::Text:: *)
+(*Standard paths to Java and MathSSH.*)
+
+
 $JavaCommand = FileNameJoin[{$InstallationDirectory,"SystemFiles","Java",$SystemID,"bin","java"}];
 $WolframSSH = $MathSSH = FileNameJoin[{$InstallationDirectory,"SystemFiles","Java","WolframSSH.jar"}];
 
@@ -207,9 +311,17 @@ Module[{cmdLine},
 ];
 
 
-Options[SshLaunchRemote]={SSHRemote`Multiplexing->False, SSHRemote`MultiplexingCommands->{(* Start *)"",(* Control commands *)""}, Verbose->False};
+(* ::Text:: *)
+(*See https://mathematica.stackexchange.com/a/98478 for more information about SyntaxInformation[] and for "OptionNames".*)
+(*See https://mathematica.stackexchange.com/questions/18674/evaluation-of-optionvalue for more information about evaluation of OptionValue[].*)
 
-SyntaxInformation[SshLaunchRemote]={"ArgumentsPattern"->{_,_,__,OptionsPattern[]}, "OptionNames"->(*optionNames[SshLaunchRemote]*){"Multiplexing","MultiplexingCommands","Verbose"}};
+
+optionNames=ToString/@Apply[Join,Options/@{##}][[All,1]]&;
+
+
+Options[SshLaunchRemote]=Join[Options[LaunchRemote], {SSHRemote`Multiplexing->False, SSHRemote`MultiplexingCommands->{(* Start *)"",(* Control commands *)""}, Verbose->False}];
+
+SyntaxInformation[SshLaunchRemote]={"ArgumentsPattern"->{_,_,__,OptionsPattern[]}, "OptionNames"->optionNames[SshLaunchRemote]};
 
 SshLaunchRemote[host_String, n:(_Integer?NonNegative):1, opts:OptionsPattern[]]:=
   SshLaunchRemote[host, $RemoteUserName, $RemoteCommand, n, opts];
@@ -266,21 +378,21 @@ Module[{multiplex,multiplexCmds,verbose,java,wolframssh,mathssh,links,cmdLine,co
 
   (* Attempt to connect to the kernels. If it succeeds, we don't need to close the links; they will be automatically closed when the kernels are terminated using CloseKernels[]. *)
   (** Module[{link=#,kernel},kernel=LaunchKernels[link];If[FailureQ[kernel],Print["Failed to start a remote kernel on ",host," !"];LinkClose[link];];kernel]&/@links **)
-  initLink[links, host, {host,username,cmdTemplate,opts}, OptionValue[LaunchRemote, FilterRules[{opts},Options[LaunchRemote]], KernelSpeed] ]
+  initLink[links, host,
+    {host,SSHRemote,username,cmdTemplate,
+      (* If new kernels need to be restarted/cloned, this should be done using a non-multiplexed SSH connection *)
+      (* FilterRules[{opts}, Except[{SSHRemote`Multiplexing,SSHRemote`MultiplexingCommands}, Options[SshLaunchRemote]]] *)
+      Select[{opts}, MatchQ[getRuleLHS@#, Except[Alternatives@@getRuleLHS/@{SSHRemote`Multiplexing,SSHRemote`MultiplexingCommands},Alternatives@@getRuleLHS/@Options[SshLaunchRemote]]]&]
+    },
+    OptionValue[SshLaunchRemote, {opts}, KernelSpeed] ]
 ];
-
-
-(* handling short forms of kernel descriptions *)
-(* exclude the names matched by LocalKernels *)
-sshRemoteKernelObject[try][Except["localhost"|"local",s_String], args___]/; StringMatchQ[s,RegularExpression["\\w+(\\.\\w+)*"]] :=
-	SshLaunchRemote[s, args] (* hostname, but not the special one for local kernels *);
 
 
 (* raw constructor; several at once *)
 initLink[links_List, host_, args_, sp_] :=
  Module[{kernels},
  	(* each kernel gets its own set of variables for the mutable fields *)
- 	kernels = Module[{speed=sp}, sshRemoteKernel[ SubKernels`RemoteKernels`Private`lk[#, host, args, speed] ]]& /@ links;
+ 	kernels = Module[{speed=sp}, remoteKernel[ SubKernels`RemoteKernels`Private`lk[#, host, args, speed] ]]& /@ links;
  	(* local init *)
  	AppendTo[SubKernels`RemoteKernels`Private`$openkernels, kernels];
  	(* base class init *)
@@ -289,6 +401,27 @@ initLink[links_List, host_, args_, sp_] :=
 
 (* single one *)
 initLink[link_, args__] := SubKernels`Protected`firstOrFailed[ initLink[{link}, args] ]
+
+
+(* Version of LaunchRemote[] with explicit user name; calls the original LaunchRemote[] back. *)
+LaunchRemote[host_String, username_String, cmd_String, opts:OptionsPattern[]] := SubKernels`Protected`firstOrFailed[ LaunchRemote[host, username, cmd, 1, opts] ];
+LaunchRemote[host_String, username_String, cmd_String, n_Integer?NonNegative, opts:OptionsPattern[]] := Block[{$RemoteUserName=username}, LaunchRemote[host, cmd, n, opts]];
+
+(* Version of LaunchRemote[] that calls SshLaunchRemote[] *)
+
+LaunchRemote[host_String, SSHRemote, opts:OptionsPattern[]] := LaunchRemote[host, SSHRemote, $RemoteUserName, $RemoteCommand, opts];
+LaunchRemote[host_String, SSHRemote, n_Integer?NonNegative, opts:OptionsPattern[]] := LaunchRemote[host, SSHRemote, $RemoteUserName, $RemoteCommand, n, opts];
+
+LaunchRemote[host_String, SSHRemote, cmdTemplate_String, opts:OptionsPattern[]] := LaunchRemote[host, SSHRemote, $RemoteUserName, cmdTemplate, opts];
+LaunchRemote[host_String, SSHRemote, cmdTemplate_String, n_Integer?NonNegative, opts:OptionsPattern[]] := LaunchRemote[host, SSHRemote, $RemoteUserName, cmdTemplate, n, opts];
+
+(* default n is 1 *)
+LaunchRemote[host_String, SSHRemote, username_String, cmdTemplate_String, opts:OptionsPattern[]] :=
+  SubKernels`Protected`firstOrFailed[ LaunchRemote[host, SSHRemote, username, cmdTemplate, 1, opts] ];
+
+(* parallel launching *)
+LaunchRemote[host_String, SSHRemote, username_String, cmdTemplate_String, n_Integer?NonNegative, opts:OptionsPattern[]] :=
+  SshLaunchRemote[host, username, cmdTemplate, n, opts];
 
 
 Options[AdjustCommandLine]={SSHRemote`Asynchronous->False, SSHRemote`OperatingSystem->$OperatingSystem};
@@ -317,7 +450,13 @@ Module[{async,os},
 ];
 
 
+Protect[SshLaunchKernels, SshLaunchRemote, SshRemoteMachine, AdjustCommandLine];
+
+
 End[]
+
+
+Protect[LaunchRemote, RemoteMachine];
 
 
 EndPackage[]
